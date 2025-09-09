@@ -39,46 +39,31 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Hero illustration */}
-      <div className={`w-full max-w-5xl mt-16 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-        <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg p-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                <FileText className="w-12 h-12 text-foreground" />
-              </div>
-              <span className="text-sm text-muted-foreground font-medium">Dokumenty</span>
-            </div>
-            
-            <div className="flex items-center">
-              <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
-                <div className="w-2 h-2 bg-background rounded-full"></div>
-              </div>
-              <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-            </div>
-            
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                <Database className="w-12 h-12 text-foreground" />
-              </div>
-              <span className="text-sm text-muted-foreground font-medium">Databáza</span>
-            </div>
-            
-            <div className="flex items-center">
-              <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
-                <div className="w-2 h-2 bg-background rounded-full"></div>
-              </div>
-              <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-            </div>
-            
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                <Download className="w-12 h-12 text-foreground" />
-              </div>
-              <span className="text-sm text-muted-foreground font-medium">Výstup</span>
-            </div>
+      {/* Hero images */}
+      <div className={`w-full max-w-6xl mt-16 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+            <img 
+              src="/lovable-uploads/e9412a72-49fd-4759-8a6a-02a7e6f607db.png"
+              alt="Prepisovanie z mobilného telefónu"
+              className="w-full h-80 object-cover"
+            />
+          </div>
+          
+          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+            <img 
+              src="/lovable-uploads/ad519db5-c135-4393-bbd5-0b5e334d6479.png"
+              alt="OCR technológia a AI spracovanie"
+              className="w-full h-80 object-cover"
+            />
+          </div>
+          
+          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+            <img 
+              src="/lovable-uploads/6a58fc1c-b3d3-4219-9a78-0705df297883.png"
+              alt="Práca s digitalizovanými dokumentmi"
+              className="w-full h-80 object-cover"
+            />
           </div>
         </div>
       </div>

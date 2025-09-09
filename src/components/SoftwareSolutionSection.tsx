@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, FileText, Database, Download } from 'lucide-react';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
@@ -30,9 +30,53 @@ const SoftwareSolutionSection = () => {
   return (
     <section id="softverove-riesenie" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-8">
           Softvérové riešenie na mieru
         </h2>
+        
+        {/* Process visualization */}
+        <div className="mb-16">
+          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg p-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
+                  <FileText className="w-12 h-12 text-foreground" />
+                </div>
+                <span className="text-sm text-muted-foreground font-medium">Dokumenty</span>
+              </div>
+              
+              <div className="flex items-center">
+                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
+                  <div className="w-2 h-2 bg-background rounded-full"></div>
+                </div>
+                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-4">
+                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
+                  <Database className="w-12 h-12 text-foreground" />
+                </div>
+                <span className="text-sm text-muted-foreground font-medium">Databáza</span>
+              </div>
+              
+              <div className="flex items-center">
+                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
+                  <div className="w-2 h-2 bg-background rounded-full"></div>
+                </div>
+                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-4">
+                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
+                  <Download className="w-12 h-12 text-foreground" />
+                </div>
+                <span className="text-sm text-muted-foreground font-medium">Výstup</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <div className="space-y-16">
           {/* First subsection */}
