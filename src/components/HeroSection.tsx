@@ -46,7 +46,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/e9412a72-49fd-4759-8a6a-02a7e6f607db.png"
               alt="Prepisovanie z mobilného telefónu"
-              className="w-full h-[937px] object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
           
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/ad519db5-c135-4393-bbd5-0b5e334d6479.png"
               alt="OCR technológia a AI spracovanie"
-              className="w-full h-[937px] object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
           
@@ -62,7 +62,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/6a58fc1c-b3d3-4219-9a78-0705df297883.png"
               alt="Práca s digitalizovanými dokumentmi"
-              className="w-full h-[937px] object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
