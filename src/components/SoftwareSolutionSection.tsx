@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, FileText, Database, Download } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, FileText, Database, Download, Shield, Palette, Zap } from 'lucide-react';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
@@ -78,10 +78,15 @@ const SoftwareSolutionSection = () => {
           </div>
         </div>
         
-        <div className="space-y-16">
-          {/* First subsection */}
-          <div className="cosmic-card rounded-2xl p-8">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+        
+        {/* Main features grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* First feature */}
+          <div className="cosmic-card rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-4">
               Riešenie vášho problému bez mesačných poplatkov
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -89,16 +94,19 @@ const SoftwareSolutionSection = () => {
             </p>
           </div>
 
-          {/* Second subsection */}
-          <div className="cosmic-card rounded-2xl p-8">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+          {/* Second feature */}
+          <div className="cosmic-card rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Palette className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-4">
               Nový vzhľad výstupných dát
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-2 text-left">
               {[
                 'Generovanie vizitiek',
                 'Generovanie nálepiek, štítkov', 
@@ -115,9 +123,12 @@ const SoftwareSolutionSection = () => {
             </div>
           </div>
 
-          {/* Third subsection */}
-          <div className="cosmic-card rounded-2xl p-8">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+          {/* Third feature */}
+          <div className="cosmic-card rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Zap className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-4">
               Automatizácia procesov
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -127,8 +138,9 @@ const SoftwareSolutionSection = () => {
               V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
             </p>
           </div>
+        </div>
 
-          {/* Example case study */}
+          <div className="space-y-16">
           <div className="cosmic-card rounded-2xl p-8">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Príklad riešenia
