@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, FileText, Database, Download, Shield, Palette, Zap } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
+import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
+import solutionDesign from '@/assets/solution-design.jpg';
+import solutionAutomation from '@/assets/solution-automation.jpg';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
@@ -30,117 +33,112 @@ const SoftwareSolutionSection = () => {
   return (
     <section id="softverove-riesenie" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-16">
           Softvérové riešenie na mieru
         </h2>
-        
-        {/* Process visualization */}
-        <div className="mb-16">
-          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg p-8">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                  <FileText className="w-12 h-12 text-foreground" />
-                </div>
-                <span className="text-sm text-muted-foreground font-medium">Dokumenty</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
-                  <div className="w-2 h-2 bg-background rounded-full"></div>
-                </div>
-                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                  <Database className="w-12 h-12 text-foreground" />
-                </div>
-                <span className="text-sm text-muted-foreground font-medium">Databáza</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mx-4">
-                  <div className="w-2 h-2 bg-background rounded-full"></div>
-                </div>
-                <div className="w-12 h-0.5 bg-primary opacity-60 hidden md:block"></div>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center">
-                  <Download className="w-12 h-12 text-foreground" />
-                </div>
-                <span className="text-sm text-muted-foreground font-medium">Výstup</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         
         {/* Main features grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* First feature */}
-          <div className="cosmic-card rounded-2xl p-8 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-8 h-8 text-primary" />
+          <div className="relative overflow-hidden rounded-2xl">
+            {/* Blue metallic background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
+            
+            <div className="relative z-10 p-8 text-center">
+              <div className="mb-6">
+                <img 
+                  src={solutionNoMonthly}
+                  alt="Riešenie bez mesačných poplatkov"
+                  className="w-full h-48 object-cover rounded-xl mb-4"
+                />
+                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 backdrop-blur-sm border border-blue-300/30 flex items-center justify-center mx-auto">
+                  <Shield className="w-8 h-8 text-blue-300" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Riešenie vášho problému bez mesačných poplatkov
+              </h3>
+              <p className="text-blue-100 leading-relaxed">
+                Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Riešenie vášho problému bez mesačných poplatkov
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov.
-            </p>
           </div>
 
           {/* Second feature */}
-          <div className="cosmic-card rounded-2xl p-8 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Palette className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Nový vzhľad výstupných dát
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
-            </p>
+          <div className="relative overflow-hidden rounded-2xl">
+            {/* Blue metallic background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
             
-            <div className="grid grid-cols-1 gap-2 text-left">
-              {[
-                'Generovanie vizitiek',
-                'Generovanie nálepiek, štítkov', 
-                'Generovanie výročných správ',
-                'Generovanie QR kódov',
-                'Generovanie cenových ponúk',
-                'Generovanie objednávok',
-                'Generovanie grafov a tabuliek'
-              ].map((item, index) => (
-                <div key={index} className="text-sm text-muted-foreground">
-                  • {item}
+            <div className="relative z-10 p-8 text-center">
+              <div className="mb-6">
+                <img 
+                  src={solutionDesign}
+                  alt="Nový vzhľad výstupných dát"
+                  className="w-full h-48 object-cover rounded-xl mb-4"
+                />
+                <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 backdrop-blur-sm border border-cyan-300/30 flex items-center justify-center mx-auto">
+                  <Palette className="w-8 h-8 text-cyan-300" />
                 </div>
-              ))}
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Nový vzhľad výstupných dát
+              </h3>
+              <p className="text-blue-100 leading-relaxed mb-6">
+                Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
+              </p>
+              
+              <div className="grid grid-cols-1 gap-2 text-left">
+                {[
+                  'Generovanie vizitiek',
+                  'Generovanie nálepiek, štítkov', 
+                  'Generovanie výročných správ',
+                  'Generovanie QR kódov',
+                  'Generovanie cenových ponúk',
+                  'Generovanie objednávok',
+                  'Generovanie grafov a tabuliek'
+                ].map((item, index) => (
+                  <div key={index} className="text-sm text-blue-200">
+                    • {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Third feature */}
-          <div className="cosmic-card rounded-2xl p-8 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Zap className="w-8 h-8 text-primary" />
+          <div className="relative overflow-hidden rounded-2xl">
+            {/* Blue metallic background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
+            
+            <div className="relative z-10 p-8 text-center">
+              <div className="mb-6">
+                <img 
+                  src={solutionAutomation}
+                  alt="Automatizácia procesov"
+                  className="w-full h-48 object-cover rounded-xl mb-4"
+                />
+                <div className="w-16 h-16 rounded-2xl bg-purple-500/20 backdrop-blur-sm border border-purple-300/30 flex items-center justify-center mx-auto">
+                  <Zap className="w-8 h-8 text-purple-300" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Automatizácia procesov
+              </h3>
+              <p className="text-blue-100 leading-relaxed mb-4">
+                Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.
+              </p>
+              <p className="text-blue-100 leading-relaxed">
+                V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Automatizácia procesov
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
-            </p>
           </div>
         </div>
 
-          <div className="space-y-16">
+        <div className="space-y-16">
+          {/* Example case study */}
           <div className="cosmic-card rounded-2xl p-8">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Príklad riešenia
