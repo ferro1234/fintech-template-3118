@@ -42,35 +42,41 @@ const HeroSection = () => {
       {/* Hero images */}
       <div className={`w-full max-w-6xl mt-16 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-            <img 
-              src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
-              alt="PDF, obrazok, audio, video"
-              className="w-full h-auto object-contain"
-            />
-            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+          <div className="space-y-4">
+            <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+              <img 
+                src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
+                alt="PDF, obrazok, audio, video"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <p className="text-lg md:text-xl text-muted-foreground text-center">
               pdf, obrazok, audio, video
             </p>
           </div>
           
-          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-            <img 
-              src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
-              alt="Digitalizujeme dokumenty do novej podoby"
-              className="w-full h-auto object-contain"
-            />
-            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+          <div className="space-y-4">
+            <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+              <img 
+                src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
+                alt="Digitalizujeme dokumenty do novej podoby"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <p className="text-lg md:text-xl text-muted-foreground text-center">
               Digitalizujeme dokumenty do novej podoby
             </p>
           </div>
           
-          <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-            <img 
-              src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
-              alt="Zvyšujeme efektivitu práce"
-              className="w-full h-auto object-contain"
-            />
-            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+          <div className="space-y-4">
+            <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+              <img 
+                src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
+                alt="Zvyšujeme efektivitu práce"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <p className="text-lg md:text-xl text-muted-foreground text-center">
               Zvyšujeme efektivitu práce
             </p>
           </div>
