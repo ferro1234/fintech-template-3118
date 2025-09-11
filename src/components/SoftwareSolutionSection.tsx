@@ -37,93 +37,100 @@ const SoftwareSolutionSection = () => {
           Softvérové riešenie na mieru
         </h2>
         
-        {/* Main features grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {/* First feature */}
-          <div className="relative overflow-hidden rounded-2xl">
-            {/* Blue metallic background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
-            
-            <div className="relative z-10 p-8 text-center">
-              <div className="mb-6">
+        {/* Main features */}
+        <div className="bg-black rounded-3xl p-12 mb-16">
+          <div className="space-y-16">
+            {/* First feature */}
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="lg:w-1/3">
                 <img 
                   src={solutionNoMonthly}
                   alt="Riešenie bez mesačných poplatkov"
-                  className="w-full h-48 object-cover rounded-xl"
+                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Riešenie vášho problému bez mesačných poplatkov
-              </h3>
-              <p className="text-blue-100 leading-relaxed">
-                Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov.
-              </p>
+              <div className="lg:w-2/3 text-center lg:text-left">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Riešenie vášho problému bez mesačných poplatkov
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-lg">
+                  Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Second feature */}
-          <div className="relative overflow-hidden rounded-2xl">
-            {/* Blue metallic background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
-            
-            <div className="relative z-10 p-8 text-center">
-              <div className="mb-6">
+            {/* Modern separator */}
+            <div className="flex items-center justify-center">
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
+              <div className="mx-4 w-3 h-3 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
+            </div>
+
+            {/* Second feature */}
+            <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+              <div className="lg:w-1/3">
                 <img 
                   src={solutionDesign}
                   alt="Nový vzhľad výstupných dát"
-                  className="w-full h-48 object-cover rounded-xl"
+                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Nový vzhľad výstupných dát
-              </h3>
-              <p className="text-blue-100 leading-relaxed mb-6">
-                Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
-              </p>
-              
-              <div className="grid grid-cols-1 gap-2 text-left">
-                {[
-                  'Generovanie vizitiek',
-                  'Generovanie nálepiek, štítkov', 
-                  'Generovanie výročných správ',
-                  'Generovanie QR kódov',
-                  'Generovanie cenových ponúk',
-                  'Generovanie objednávok',
-                  'Generovanie grafov a tabuliek'
-                ].map((item, index) => (
-                  <div key={index} className="text-sm text-blue-200">
-                    • {item}
-                  </div>
-                ))}
+              <div className="lg:w-2/3 text-center lg:text-left">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Nový vzhľad výstupných dát
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                  Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+                  {[
+                    'Generovanie vizitiek',
+                    'Generovanie nálepiek, štítkov', 
+                    'Generovanie výročných správ',
+                    'Generovanie QR kódov',
+                    'Generovanie cenových ponúk',
+                    'Generovanie objednávok',
+                    'Generovanie grafov a tabuliek'
+                  ].map((item, index) => (
+                    <div key={index} className="text-sm text-gray-400 flex items-center">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Third feature */}
-          <div className="relative overflow-hidden rounded-2xl">
-            {/* Blue metallic background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-500/10 to-blue-400/20"></div>
-            
-            <div className="relative z-10 p-8 text-center">
-              <div className="mb-6">
+            {/* Modern separator */}
+            <div className="flex items-center justify-center">
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
+              <div className="mx-4 w-3 h-3 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
+            </div>
+
+            {/* Third feature */}
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="lg:w-1/3">
                 <img 
                   src={solutionAutomation}
                   alt="Automatizácia procesov"
-                  className="w-full h-48 object-cover rounded-xl"
+                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Automatizácia procesov
-              </h3>
-              <p className="text-blue-100 leading-relaxed mb-4">
-                Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.
-              </p>
-              <p className="text-blue-100 leading-relaxed">
-                V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
-              </p>
+              <div className="lg:w-2/3 text-center lg:text-left">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Automatizácia procesov
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
