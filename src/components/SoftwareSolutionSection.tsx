@@ -50,11 +50,8 @@ const SoftwareSolutionSection = () => {
                 <img 
                   src={solutionNoMonthly}
                   alt="Riešenie bez mesačných poplatkov"
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-48 object-cover rounded-xl"
                 />
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 backdrop-blur-sm border border-blue-300/30 flex items-center justify-center mx-auto">
-                  <Shield className="w-8 h-8 text-blue-300" />
-                </div>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">
                 Riešenie vášho problému bez mesačných poplatkov
@@ -76,11 +73,8 @@ const SoftwareSolutionSection = () => {
                 <img 
                   src={solutionDesign}
                   alt="Nový vzhľad výstupných dát"
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-48 object-cover rounded-xl"
                 />
-                <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 backdrop-blur-sm border border-cyan-300/30 flex items-center justify-center mx-auto">
-                  <Palette className="w-8 h-8 text-cyan-300" />
-                </div>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">
                 Nový vzhľad výstupných dát
@@ -118,11 +112,8 @@ const SoftwareSolutionSection = () => {
                 <img 
                   src={solutionAutomation}
                   alt="Automatizácia procesov"
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-48 object-cover rounded-xl"
                 />
-                <div className="w-16 h-16 rounded-2xl bg-purple-500/20 backdrop-blur-sm border border-purple-300/30 flex items-center justify-center mx-auto">
-                  <Zap className="w-8 h-8 text-purple-300" />
-                </div>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">
                 Automatizácia procesov

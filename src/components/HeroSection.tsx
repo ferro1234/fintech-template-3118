@@ -44,26 +44,35 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
             <img 
-              src="/lovable-uploads/e9412a72-49fd-4759-8a6a-02a7e6f607db.png"
-              alt="Prepisovanie z mobilného telefónu"
+              src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
+              alt="PDF, obrazok, audio, video"
               className="w-full h-auto object-contain"
             />
+            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+              pdf, obrazok, audio, video
+            </p>
           </div>
           
           <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
             <img 
-              src="/lovable-uploads/ad519db5-c135-4393-bbd5-0b5e334d6479.png"
-              alt="OCR technológia a AI spracovanie"
+              src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
+              alt="Digitalizujeme dokumenty do novej podoby"
               className="w-full h-auto object-contain"
             />
+            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+              Digitalizujeme dokumenty do novej podoby
+            </p>
           </div>
           
           <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
             <img 
-              src="/lovable-uploads/6a58fc1c-b3d3-4219-9a78-0705df297883.png"
-              alt="Práca s digitalizovanými dokumentmi"
+              src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
+              alt="Zvyšujeme efektivitu práce"
               className="w-full h-auto object-contain"
             />
+            <p className="text-lg md:text-xl text-muted-foreground text-center p-4">
+              Zvyšujeme efektivitu práce
+            </p>
           </div>
         </div>
       </div>
