@@ -42,10 +42,10 @@ const ServicesSection = () => {
 
       {/* Services Grid */}
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-0">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* Service 1 */}
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-left min-h-80">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
+          <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-center min-h-80 rounded-2xl">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
               <FileText className="w-8 h-8 text-blue-600" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -71,8 +71,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 text-left min-h-80">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
+          <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 text-center min-h-80 rounded-2xl">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
               <Camera className="w-8 h-8 text-blue-700" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -84,8 +84,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="bg-gradient-to-br from-blue-800 to-slate-900 p-8 text-left min-h-80">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
+          <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-8 text-center min-h-80 rounded-2xl">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
               <Mic className="w-8 h-8 text-blue-800" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
