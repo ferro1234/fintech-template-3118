@@ -6,7 +6,7 @@ const ServicesSection = () => {
   return (
     <section id="sluzby" className="py-20 px-6 relative overflow-hidden bg-black">
       {/* Header Section */}
-      <div className="relative z-10 max-w-6xl mx-auto mb-16">
+      <div className="relative z-10 max-w-6xl mx-auto mb-0">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Photo */}
           <div className="relative">
