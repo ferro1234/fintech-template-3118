@@ -1,11 +1,40 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
+  
+  const solutionFeatures = [
+    {
+      image: solutionNoMonthly,
+      title: "Riešenie vášho problému bez mesačných poplatkov",
+      description: "Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov."
+    },
+    {
+      image: solutionDesign,
+      title: "Nový vzhľad výstupných dát",
+      description: "Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.",
+      features: [
+        'Generovanie vizitiek',
+        'Generovanie nálepiek, štítkov', 
+        'Generovanie výročných správ',
+        'Generovanie QR kódov',
+        'Generovanie cenových ponúk',
+        'Generovanie objednávok',
+        'Generovanie grafov a tabuliek'
+      ]
+    },
+    {
+      image: solutionAutomation,
+      title: "Automatizácia procesov",
+      description: "Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.",
+      additionalText: "V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru."
+    }
+  ];
   
   const examples = [
     {
@@ -37,102 +66,58 @@ const SoftwareSolutionSection = () => {
           Softvérové riešenie na mieru
         </h2>
         
-        {/* Main features */}
+        {/* Main features carousel */}
         <div className="bg-black rounded-3xl p-12 mb-16">
-          <div className="space-y-16">
-            {/* First feature */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              <div className="lg:w-1/3">
-                <img 
-                  src={solutionNoMonthly}
-                  alt="Riešenie bez mesačných poplatkov"
-                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-              <div className="lg:w-2/3 text-center lg:text-left">
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Riešenie vášho problému bez mesačných poplatkov
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov.
-                </p>
-              </div>
-            </div>
-
-            {/* Modern separator */}
-            <div className="flex items-center justify-center">
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
-              <div className="mx-4 w-3 h-3 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
-            </div>
-
-            {/* Second feature */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
-              <div className="lg:w-1/3">
-                <img 
-                  src={solutionDesign}
-                  alt="Nový vzhľad výstupných dát"
-                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-              <div className="lg:w-2/3 text-center lg:text-left">
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Nový vzhľad výstupných dát
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                  Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
-                  {[
-                    'Generovanie vizitiek',
-                    'Generovanie nálepiek, štítkov', 
-                    'Generovanie výročných správ',
-                    'Generovanie QR kódov',
-                    'Generovanie cenových ponúk',
-                    'Generovanie objednávok',
-                    'Generovanie grafov a tabuliek'
-                  ].map((item, index) => (
-                    <div key={index} className="text-sm text-gray-400 flex items-center">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                      {item}
+          <Carousel 
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {solutionFeatures.map((feature, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-4/5 lg:basis-3/4">
+                  <div className="flex flex-col lg:flex-row items-center gap-8 min-h-[400px]">
+                    <div className="lg:w-1/3">
+                      <img 
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-64 object-cover rounded-2xl shadow-xl"
+                      />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Modern separator */}
-            <div className="flex items-center justify-center">
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
-              <div className="mx-4 w-3 h-3 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent w-full max-w-md"></div>
-            </div>
-
-            {/* Third feature */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              <div className="lg:w-1/3">
-                <img 
-                  src={solutionAutomation}
-                  alt="Automatizácia procesov"
-                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-              <div className="lg:w-2/3 text-center lg:text-left">
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Automatizácia procesov
-                </h3>
-                <div className="space-y-4">
-                  <p className="text-gray-300 leading-relaxed text-lg">
-                    Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed text-lg">
-                    V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div className="lg:w-2/3 text-center lg:text-left">
+                      <h3 className="text-2xl font-semibold text-white mb-4">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                        {feature.description}
+                      </p>
+                      
+                      {feature.features && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left mb-6">
+                          {feature.features.map((item, idx) => (
+                            <div key={idx} className="text-sm text-gray-400 flex items-center">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      
+                      {feature.additionalText && (
+                        <p className="text-gray-300 leading-relaxed text-lg">
+                          {feature.additionalText}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+            <CarouselNext className="right-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+          </Carousel>
         </div>
 
         <div className="space-y-16">
