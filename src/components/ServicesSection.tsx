@@ -32,7 +32,7 @@ const ServicesSection = () => {
           
           {/* Description - Third on mobile (moved after photo), second column on desktop */}
           <div className="order-2 lg:order-2 space-y-6 text-center lg:text-left">
-            <p className="text-blue-100 leading-relaxed text-base lg:text-lg">
+            <p className="hidden md:block text-blue-100 leading-relaxed text-base lg:text-lg">
               Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
               Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
               s vysokou presnosťou a efektivitou.
