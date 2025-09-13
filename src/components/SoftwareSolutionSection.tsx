@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { type CarouselApi } from '@/components/ui/carousel';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
   
   const solutionFeatures = [
     {
@@ -59,8 +63,46 @@ const SoftwareSolutionSection = () => {
     setCurrentExample((prev) => (prev - 1 + examples.length) % examples.length);
   };
 
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionHeight = rect.height;
+      
+      // Calculate how much of the section is visible
+      const visibleTop = Math.max(0, -rect.top);
+      const visibleBottom = Math.min(sectionHeight, windowHeight - rect.top);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      
+      // Only proceed if section is significantly visible
+      if (visibleHeight < windowHeight * 0.3) return;
+      
+      // Calculate scroll progress through the section (0 to 1)
+      const scrollProgress = Math.max(0, Math.min(1, (-rect.top + windowHeight * 0.5) / (sectionHeight - windowHeight * 0.5)));
+      
+      // Determine which slide should be active based on scroll progress
+      const totalSlides = solutionFeatures.length;
+      const targetSlide = Math.floor(scrollProgress * totalSlides);
+      const clampedSlide = Math.min(targetSlide, totalSlides - 1);
+      
+      if (clampedSlide !== currentSlide) {
+        setCurrentSlide(clampedSlide);
+        carouselApi.scrollTo(clampedSlide);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [carouselApi, currentSlide, solutionFeatures.length]);
+
   return (
-    <section id="softverove-riesenie" className="py-20 px-6 bg-background">
+    <section ref={sectionRef} id="softverove-riesenie" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-16">
           Softvérové riešenie na mieru
@@ -69,9 +111,11 @@ const SoftwareSolutionSection = () => {
         {/* Main features carousel */}
         <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 mb-16 overflow-hidden">
           <Carousel 
+            setApi={setCarouselApi}
             opts={{
               align: "center",
-              loop: true,
+              loop: false,
+              watchDrag: false,
             }}
             className="w-full"
           >
@@ -124,7 +168,12 @@ const SoftwareSolutionSection = () => {
           {/* Auto-scroll indicator dots */}
           <div className="flex justify-center gap-2 mt-6">
             {solutionFeatures.map((_, index) => (
-              <div key={index} className="w-2 h-2 rounded-full bg-gray-600 opacity-50"></div>
+              <div 
+                key={index} 
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'bg-primary scale-125' : 'bg-gray-600 opacity-50'
+                }`}
+              ></div>
             ))}
           </div>
         </div>
