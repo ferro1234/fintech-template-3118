@@ -10,40 +10,53 @@ const Footer = () => {
             Kontakt
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="cosmic-card rounded-2xl p-6 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Phone className="w-6 h-6 text-primary" />
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+            {/* Mobile: Inline layout, Desktop: Original card layout */}
+            <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
+              <div className="flex items-center gap-3 md:flex-col md:gap-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                  <Phone className="w-4 h-4 md:w-6 md:h-6 text-primary" />
+                </div>
+                <div className="md:text-center md:space-y-2">
+                  <h3 className="font-semibold text-foreground md:mt-4">Telefón</h3>
+                  <a href="tel:0905321308" className="text-muted-foreground hover:text-primary transition-colors block">
+                    0905 321 308
+                  </a>
+                </div>
               </div>
-              <h3 className="font-semibold text-foreground">Telefón</h3>
-              <a href="tel:0905321308" className="text-muted-foreground hover:text-primary transition-colors">
-                0905 321 308
-              </a>
             </div>
             
-            <div className="cosmic-card rounded-2xl p-6 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Mail className="w-6 h-6 text-primary" />
+            <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
+              <div className="flex items-center gap-3 md:flex-col md:gap-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                  <Mail className="w-4 h-4 md:w-6 md:h-6 text-primary" />
+                </div>
+                <div className="md:text-center md:space-y-2">
+                  <h3 className="font-semibold text-foreground md:mt-4">Email</h3>
+                  <a href="mailto:harangozo@sketch.sk" className="text-muted-foreground hover:text-primary transition-colors block">
+                    harangozo@sketch.sk
+                  </a>
+                </div>
               </div>
-              <h3 className="font-semibold text-foreground">Email</h3>
-              <a href="mailto:harangozo@sketch.sk" className="text-muted-foreground hover:text-primary transition-colors">
-                harangozo@sketch.sk
-              </a>
             </div>
             
-            <div className="cosmic-card rounded-2xl p-6 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
-                <ExternalLink className="w-6 h-6 text-primary" />
+            <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
+              <div className="flex items-center gap-3 md:flex-col md:gap-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                  <ExternalLink className="w-4 h-4 md:w-6 md:h-6 text-primary" />
+                </div>
+                <div className="md:text-center md:space-y-2">
+                  <h3 className="font-semibold text-foreground md:mt-4">Web stránka</h3>
+                  <a 
+                    href="https://www.spravawebstranok.sk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors block"
+                  >
+                    spravawebstranok.sk
+                  </a>
+                </div>
               </div>
-              <h3 className="font-semibold text-foreground">Web stránka</h3>
-              <a 
-                href="https://www.spravawebstranok.sk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                spravawebstranok.sk
-              </a>
             </div>
           </div>
           
@@ -60,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-border mt-12 pt-8">
+        <div className="border-t border-border mt-8 md:mt-12 pt-6 md:pt-8">
           <div className="text-center">
             <p className="text-muted-foreground text-sm">
               © 2024 prepisdokumentov.sk - František Harangózo. Všetky práva vyhradené.
