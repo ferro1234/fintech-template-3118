@@ -67,7 +67,7 @@ const SoftwareSolutionSection = () => {
         </h2>
         
         {/* Main features carousel */}
-        <div className="bg-black rounded-3xl p-12 mb-16">
+        <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 mb-16 overflow-hidden">
           <Carousel 
             opts={{
               align: "center",
@@ -75,49 +75,58 @@ const SoftwareSolutionSection = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="flex items-center">
               {solutionFeatures.map((feature, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-4/5 lg:basis-3/4">
-                  <div className="flex flex-col lg:flex-row items-center gap-8 min-h-[400px]">
-                    <div className="lg:w-1/3">
-                      <img 
-                        src={feature.image}
-                        alt={feature.title}
-                        className="w-full h-64 object-cover rounded-2xl shadow-xl"
-                      />
-                    </div>
-                    <div className="lg:w-2/3 text-center lg:text-left">
-                      <h3 className="text-2xl font-semibold text-white mb-4">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                        {feature.description}
-                      </p>
-                      
-                      {feature.features && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left mb-6">
-                          {feature.features.map((item, idx) => (
-                            <div key={idx} className="text-sm text-gray-400 flex items-center">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      
-                      {feature.additionalText && (
-                        <p className="text-gray-300 leading-relaxed text-lg">
-                          {feature.additionalText}
+                <CarouselItem key={index} className="basis-full md:basis-4/5 lg:basis-3/4">
+                  <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 mx-4 transition-all duration-500 hover:from-gray-700/60 hover:to-gray-800/60 border border-gray-700/30">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 min-h-[400px]">
+                      <div className="lg:w-1/3">
+                        <img 
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-64 object-cover rounded-xl shadow-2xl border border-gray-600/30"
+                        />
+                      </div>
+                      <div className="lg:w-2/3 text-center lg:text-left">
+                        <h3 className="text-2xl font-semibold text-white mb-4 leading-tight">
+                          {feature.title}
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                          {feature.description}
                         </p>
-                      )}
+                        
+                        {feature.features && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-6">
+                            {feature.features.map((item, idx) => (
+                              <div key={idx} className="text-sm text-gray-400 flex items-center group">
+                                <div className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-110 transition-transform"></div>
+                                <span className="group-hover:text-gray-300 transition-colors">{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        
+                        {feature.additionalText && (
+                          <p className="text-gray-300 leading-relaxed text-lg">
+                            {feature.additionalText}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
-            <CarouselNext className="right-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+            <CarouselPrevious className="left-4 bg-white/10 border-white/20 text-white hover:bg-white/30 hover:scale-110 transition-all duration-200" />
+            <CarouselNext className="right-4 bg-white/10 border-white/20 text-white hover:bg-white/30 hover:scale-110 transition-all duration-200" />
           </Carousel>
+          
+          {/* Auto-scroll indicator dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {solutionFeatures.map((_, index) => (
+              <div key={index} className="w-2 h-2 rounded-full bg-gray-600 opacity-50"></div>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-16">
