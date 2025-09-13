@@ -21,10 +21,12 @@ const AboutSection = () => {
             </div>
             
             <div className="flex justify-center">
-              <div className="w-64 h-64 rounded-3xl bg-muted flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-foreground/10 flex items-center justify-center">
-                  <span className="text-4xl text-foreground">FH</span>
-                </div>
+              <div className="w-64 h-64 rounded-3xl overflow-hidden">
+                <img 
+                  src="/src/assets/profile-photo.jpg" 
+                  alt="František Harangózo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
