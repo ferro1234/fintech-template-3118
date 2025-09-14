@@ -4,16 +4,23 @@ import { Button } from '@/components/ui/button';
 import servicesPhoto from '@/assets/services-photo.jpg';
 
 const ServicesSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="sluzby" className="py-20 px-6 relative overflow-hidden bg-black">
       {/* Header Section - Text only on desktop/tablet, hidden on mobile */}
       <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
         <div className="text-center">
           <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
             DIGITALIZAČNÉ &<br />
             <span className="text-blue-400">AI SLUŽBY</span>
-          </h2>
+          </h1>
         </div>
       </div>
 
@@ -35,14 +42,11 @@ const ServicesSection = () => {
           <div className="space-y-6">
             <div>
               <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
-              <h2 className="text-5xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-5xl font-bold text-white leading-tight mb-6">
                 DIGITALIZAČNÉ &<br />
                 <span className="text-blue-400">AI SLUŽBY</span>
-              </h2>
+              </h1>
             </div>
-            <p className="text-blue-300 font-medium text-lg mb-4">
-              miesto pre vašu fotografiu
-            </p>
             <p className="text-blue-100 leading-relaxed text-lg">
               Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
               Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
@@ -70,55 +74,44 @@ const ServicesSection = () => {
         <div className="grid md:grid-cols-3 gap-4">
           {/* Service 1 */}
           <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-center min-h-80 rounded-2xl">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-              <FileText className="w-8 h-8 text-blue-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <FileText className="w-12 h-12 text-white mx-auto mb-6" />
+            <h3 className="text-2xl font-bold text-white mb-6">
               Prepisovanie textov a dokumentov
             </h3>
-            <p className="text-blue-100 text-sm leading-relaxed mb-6">
-              Na prepisovanie textov využívame kombináciu AI modelov a špecializovaných OCR knižníc. Vďaka tomu vieme efektívne spracovať text aj pri horšej kvalite dokumentov alebo obrázkov. Po načítaní obsahu do databázy získate prístup k obsahu, s ktorým budete môcť ďalej pracovať, filtrovať ho a triediť.
-            </p>
-            
-            <h4 className="text-lg font-semibold text-white mb-3">
-              Prepisovanie textov z naskenovaných dokumentov:
-            </h4>
-            <p className="text-blue-100 text-sm leading-relaxed mb-4">
-              Dodáte nám naskenované dokumenty na USB alebo zabezpečenom cloude. Sken je potrebné realizovať v dostatočnom rozlíšení. Požiadavku vyriešime jednorazovo alebo vám navrhneme spôsob, ako celý tento proces automatizovať.
-            </p>
-            
-            <h4 className="text-lg font-semibold text-white mb-3">
-              Prepisovanie textov a dokumentov v PDF:
-            </h4>
-            <p className="text-blue-100 text-sm leading-relaxed">
-              V prípade PDF dokumentov je prepis spoľahlivejší, ak je obsah v PDF súbore skopírovateľný. Môže ísť o formuláre, testy, správy, faktúry, doklady, bločky, objednávky či kalkulácie.
-            </p>
+            <Button 
+              onClick={() => scrollToSection('dokumenty')}
+              className="bg-white text-blue-600 hover:bg-blue-50 font-semibold"
+            >
+              Zistiť viac
+            </Button>
           </div>
 
           {/* Service 2 */}
           <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 text-center min-h-80 rounded-2xl">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-              <Camera className="w-8 h-8 text-blue-700" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <Camera className="w-12 h-12 text-white mx-auto mb-6" />
+            <h3 className="text-2xl font-bold text-white mb-6">
               Prepisovanie textov z fotiek a obrázkov
             </h3>
-            <p className="text-blue-100 text-sm leading-relaxed">
-              Potrebujete prepísať z fotky texty alebo z obrázku vybrať údaje o produkte? Texty môžeme prepísať a predmety na obrázku rozpoznať a roztriediť. Dôležité je, aby bola čitateľnosť dostupná aj voľným okom.
-            </p>
+            <Button 
+              onClick={() => scrollToSection('fotky')}
+              className="bg-white text-blue-600 hover:bg-blue-50 font-semibold"
+            >
+              Zistiť viac
+            </Button>
           </div>
 
           {/* Service 3 */}
           <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-8 text-center min-h-80 rounded-2xl">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-              <Mic className="w-8 h-8 text-blue-800" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <Mic className="w-12 h-12 text-white mx-auto mb-6" />
+            <h3 className="text-2xl font-bold text-white mb-6">
               Prepisovanie audio a video nahrávok
             </h3>
-            <p className="text-blue-100 text-sm leading-relaxed">
-              Používame AI nástroje na rozpoznávanie reči (ASR – Automatic Speech Recognition). Nahrali ste si konzultáciu, školenie, workshop na svoj telefón, kameru alebo diktafón? Prepíšeme vám tento záznam do formy textu a roztriedime ho na základe kľúčových slov do kategórií. Ukážeme vám, ako z rozhovoru vybrať dôležité informácie a pracovať s nimi ďalej.
-            </p>
+            <Button 
+              onClick={() => scrollToSection('audio-video')}
+              className="bg-white text-blue-600 hover:bg-blue-50 font-semibold"
+            >
+              Zistiť viac
+            </Button>
           </div>
         </div>
       </div>

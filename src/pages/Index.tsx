@@ -7,6 +7,7 @@ import TargetAudienceSection from '@/components/TargetAudienceSection';
 import OutputFormatSection from '@/components/OutputFormatSection';
 import SoftwareSolutionSection from '@/components/SoftwareSolutionSection';
 import ServicesSection from '@/components/ServicesSection';
+import ServiceDetailSections from '@/components/ServiceDetailSections';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -14,12 +15,13 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
       <main>
-        <HeroSection />
+        <ServicesSection />
+        <ServiceDetailSections />
         <AboutSection />
         <TargetAudienceSection />
         <OutputFormatSection />
         <SoftwareSolutionSection />
-        <ServicesSection />
+        <HeroSection />
       </main>
       <Footer />
     </div>
