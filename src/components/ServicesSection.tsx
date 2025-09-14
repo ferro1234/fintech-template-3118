@@ -64,7 +64,7 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
-          <div className="group bg-gradient-to-br from-blue-400/20 to-blue-400/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-400/30 hover:to-blue-400/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(to bottom right, #1b347b40, #1b347b40)'}}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
@@ -88,7 +88,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="group bg-gradient-to-br from-blue-400/20 to-blue-400/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-400/30 hover:to-blue-400/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(to bottom right, #1b347b40, #1b347b40)'}}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
@@ -112,7 +112,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="group bg-gradient-to-br from-blue-400/20 to-blue-400/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-400/30 hover:to-blue-400/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(to bottom right, #1b347b40, #1b347b40)'}}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
