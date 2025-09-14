@@ -42,14 +42,7 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    // Enable gzip compression
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-      },
-    },
+    // Use default esbuild minifier for compatibility
     // Optimize chunk size warnings
     chunkSizeWarningLimit: 1000,
     // Enable source maps in development only
