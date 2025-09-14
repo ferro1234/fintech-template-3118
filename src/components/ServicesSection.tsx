@@ -37,7 +37,16 @@ const ServicesSection = memo(() => {
           {/* Photo - Left column */}
           <div className="flex justify-center">
             <div className="w-full max-w-lg">
-              <img src={servicesPhoto} alt="Realizátor digitalizačných služieb" decoding="async" fetchPriority="high" className="w-auto h-[500px] object-cover rounded-2xl shadow-2xl" />
+              <img 
+                src={servicesPhoto} 
+                alt="Realizátor digitalizačných služieb" 
+                fetchPriority="high"
+                decoding="sync"
+                loading="eager"
+                width="500"
+                height="500"
+                className="w-full h-[500px] object-cover rounded-2xl shadow-2xl" 
+              />
             </div>
           </div>
           
