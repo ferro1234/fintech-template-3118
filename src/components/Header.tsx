@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 const Header = () => {
   const [activeSection, setActiveSection] = useState('titulka');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['titulka', 'o-nas', 'pre-koho', 'vystupny-format', 'softverove-riesenie', 'sluzby', 'kontakt'];
@@ -33,6 +35,7 @@ const Header = () => {
         behavior: 'smooth'
       });
     }
+    setIsMobileMenuOpen(false); // Close mobile menu when navigating
   };
   const menuItems = [{
     label: 'Naše služby',
@@ -64,11 +67,46 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
+          <button 
+            className="lg:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+          
           <a href="mailto:harangozo@sketch.sk">
             
           </a>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border animate-slide-in-right">
+          <div className="container mx-auto px-6 py-6">
+            <div className="flex justify-center mb-6">
+              <Logo />
+            </div>
+            
+            <nav className="flex flex-col space-y-4">
+              {menuItems.map(item => (
+                <button 
+                  key={item.id} 
+                  onClick={() => scrollToSection(item.id)} 
+                  className={`px-4 py-3 text-lg rounded-lg transition-colors text-center ${
+                    activeSection === item.id 
+                      ? 'bg-accent text-accent-foreground' 
+                      : 'text-foreground hover:bg-accent hover:text-accent-foreground'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
     </header>;
 };
 export default Header;
