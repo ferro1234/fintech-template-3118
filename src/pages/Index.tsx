@@ -2,12 +2,12 @@
 import React, { Suspense } from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
+import ServiceDetailSections from '@/components/ServiceDetailSections';
+import TargetAudienceSection from '@/components/TargetAudienceSection';
+import OutputFormatSection from '@/components/OutputFormatSection';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
-// Lazy load heavy components that are below the fold
-const ServiceDetailSections = React.lazy(() => import('@/components/ServiceDetailSections'));
-const TargetAudienceSection = React.lazy(() => import('@/components/TargetAudienceSection'));
-const OutputFormatSection = React.lazy(() => import('@/components/OutputFormatSection'));
+// Only lazy load the heaviest components
 const SoftwareSolutionSection = React.lazy(() => import('@/components/SoftwareSolutionSection'));
 const AboutSection = React.lazy(() => import('@/components/AboutSection'));
 const Footer = React.lazy(() => import('@/components/Footer'));
@@ -24,33 +24,23 @@ const Index = () => {
       <Header />
       <main>
         <ServicesSection />
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <ServiceDetailSections />
-          </Suspense>
-        </ErrorBoundary>
+        <ServiceDetailSections />
+        <TargetAudienceSection />
+        <OutputFormatSection />
         
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <TargetAudienceSection />
-          </Suspense>
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <OutputFormatSection />
-          </Suspense>
-        </ErrorBoundary>
         <ErrorBoundary>
           <Suspense fallback={<LoadingSpinner />}>
             <SoftwareSolutionSection />
           </Suspense>
         </ErrorBoundary>
+        
         <ErrorBoundary>
           <Suspense fallback={<LoadingSpinner />}>
             <AboutSection />
           </Suspense>
         </ErrorBoundary>
       </main>
+      
       <ErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>
           <Footer />
