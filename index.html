@@ -22,39 +22,133 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/ySn0lBF5uuftQwa938DlySole5A3/uploads/1757867735390-logo-sws.svg">
     
-    <!-- Structured Data -->
+    <!-- Structured Data - Slovak Version -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Website",
-          "@id": "https://prepis-dokumentov.sk/#website",
+          "@id": "https://prepis-dokumentov.sk/#website-sk",
+          "url": "https://prepis-dokumentov.sk/",
+          "name": "Prepis dokumentov z textov a PDF",
+          "description": "Digitalizácia osobných alebo firemných dát na mieru. Prinášame riešenia automatizovaného prepisu rôznych súborov alebo obrázkov do digitálnej podoby.",
+          "publisher": {
+            "@id": "https://prepis-dokumentov.sk/#organization-sk"
+          },
+          "inLanguage": "sk"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://prepis-dokumentov.sk/#webpage-sk",
+          "url": "https://prepis-dokumentov.sk/",
+          "name": "Prepis dokumentov z textov a PDF - Digitalizácia dokumentov",
+          "isPartOf": {
+            "@id": "https://prepis-dokumentov.sk/#website-sk"
+          },
+          "about": {
+            "@id": "https://prepis-dokumentov.sk/#organization-sk"
+          },
+          "description": "Digitalizácia osobných alebo firemných dát na mieru. Prinášame riešenia automatizovaného prepisu rôznych súborov alebo obrázkov do digitálnej podoby.",
+          "inLanguage": "sk"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://prepis-dokumentov.sk/#organization-sk",
+          "name": "Cosmos Tasks",
+          "url": "https://prepis-dokumentov.sk/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://storage.googleapis.com/gpt-engineer-file-uploads/ySn0lBF5uuftQwa938DlySole5A3/uploads/1757867735390-logo-sws.svg"
+          },
+          "sameAs": [
+            "@cosmos_tasks"
+          ],
+          "description": "Profesionálne služby digitalizácie a prepisu dokumentov pre jednotlivcov a firmy",
+          "knowsAbout": ["Prepis dokumentov", "OCR technológia", "Audio prepis", "PDF spracovanie", "Digitalizácia obrázkov"]
+        },
+        {
+          "@type": "Service",
+          "name": "Prepis dokumentov a PDF súborov",
+          "description": "Automatizovaný prepis dokumentov, skenovaných PDF súborov a obrázkov do digitálnej podoby",
+          "provider": {
+            "@id": "https://prepis-dokumentov.sk/#organization-sk"
+          },
+          "serviceType": "Digitalizácia dokumentov",
+          "category": "Prepis textu",
+          "areaServed": "Slovensko",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Service", 
+          "name": "Digitalizácia obrázkov s textom",
+          "description": "Spracovanie obrázkov obsahujúcich text pomocou pokročilej OCR technológie",
+          "provider": {
+            "@id": "https://prepis-dokumentov.sk/#organization-sk"
+          },
+          "serviceType": "OCR spracovanie",
+          "category": "Digitalizácia obrázkov",
+          "areaServed": "Slovensko",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Prepis audio a video súborov",
+          "description": "Automatická transkripcia audio a video nahrávok do textovej podoby",
+          "provider": {
+            "@id": "https://prepis-dokumentov.sk/#organization-sk"
+          },
+          "serviceType": "Audio transkripcia",
+          "category": "Spracovanie zvuku",
+          "areaServed": "Slovensko",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - English Version -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Website",
+          "@id": "https://prepis-dokumentov.sk/#website-en",
           "url": "https://prepis-dokumentov.sk/",
           "name": "Document and PDF Transcription Services",
           "description": "Custom digitization of personal or corporate data. We provide automated transcription solutions for various files and images into digital format.",
           "publisher": {
-            "@id": "https://prepis-dokumentov.sk/#organization"
+            "@id": "https://prepis-dokumentov.sk/#organization-en"
           },
-          "inLanguage": ["en", "sk"]
+          "inLanguage": "en"
         },
         {
           "@type": "WebPage",
-          "@id": "https://prepis-dokumentov.sk/#webpage",
+          "@id": "https://prepis-dokumentov.sk/#webpage-en",
           "url": "https://prepis-dokumentov.sk/",
           "name": "Document and PDF Transcription - Professional Document Digitization Services",
           "isPartOf": {
-            "@id": "https://prepis-dokumentov.sk/#website"
+            "@id": "https://prepis-dokumentov.sk/#website-en"
           },
           "about": {
-            "@id": "https://prepis-dokumentov.sk/#organization"
+            "@id": "https://prepis-dokumentov.sk/#organization-en"
           },
           "description": "Custom digitization of personal or corporate data. We provide automated transcription solutions for various files and images into digital format.",
-          "inLanguage": ["en", "sk"]
+          "inLanguage": "en"
         },
         {
           "@type": "Organization",
-          "@id": "https://prepis-dokumentov.sk/#organization",
+          "@id": "https://prepis-dokumentov.sk/#organization-en",
           "name": "Cosmos Tasks",
           "url": "https://prepis-dokumentov.sk/",
           "logo": {
@@ -72,7 +166,7 @@
           "name": "Document and PDF File Transcription",
           "description": "Automated transcription of documents, scanned PDF files and images into digital format",
           "provider": {
-            "@id": "https://prepis-dokumentov.sk/#organization"
+            "@id": "https://prepis-dokumentov.sk/#organization-en"
           },
           "serviceType": "Document Digitization",
           "category": "Text Transcription",
@@ -87,7 +181,7 @@
           "name": "Image Text Digitization",
           "description": "Processing images containing text using advanced OCR technology",
           "provider": {
-            "@id": "https://prepis-dokumentov.sk/#organization"
+            "@id": "https://prepis-dokumentov.sk/#organization-en"
           },
           "serviceType": "OCR Processing",
           "category": "Image Digitization",
@@ -102,7 +196,7 @@
           "name": "Audio and Video File Transcription",
           "description": "Automatic transcription of audio and video recordings into text format",
           "provider": {
-            "@id": "https://prepis-dokumentov.sk/#organization"
+            "@id": "https://prepis-dokumentov.sk/#organization-en"
           },
           "serviceType": "Audio Transcription",
           "category": "Audio Processing",
