@@ -1,13 +1,15 @@
 import React from 'react';
 import { Phone, Mail, ExternalLink } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer id="kontakt" className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
-            Kontakt
+            {t('footer.title')}
           </h2>
           
           <div className="grid md:grid-cols-3 gap-4 md:gap-8">
@@ -18,7 +20,7 @@ const Footer = () => {
                   <Phone className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
                 <div className="md:text-center md:space-y-2">
-                  <h3 className="font-semibold text-foreground md:mt-4">Telefón</h3>
+                  <h3 className="font-semibold text-foreground md:mt-4">{t('footer.phone')}</h3>
                   <a href="tel:0905321308" className="text-muted-foreground hover:text-primary transition-colors block">
                     0905 321 308
                   </a>
@@ -32,7 +34,7 @@ const Footer = () => {
                   <Mail className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
                 <div className="md:text-center md:space-y-2">
-                  <h3 className="font-semibold text-foreground md:mt-4">Email</h3>
+                  <h3 className="font-semibold text-foreground md:mt-4">{t('footer.email')}</h3>
                   <a href="mailto:harangozo@sketch.sk" className="text-muted-foreground hover:text-primary transition-colors block">
                     harangozo@sketch.sk
                   </a>
@@ -46,7 +48,7 @@ const Footer = () => {
                   <ExternalLink className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
                 <div className="md:text-center md:space-y-2">
-                  <h3 className="font-semibold text-foreground md:mt-4">Web stránka</h3>
+                  <h3 className="font-semibold text-foreground md:mt-4">{t('footer.website')}</h3>
                   <a 
                     href="https://www.spravawebstranok.sk" 
                     target="_blank" 
@@ -67,7 +69,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:underline"
             >
-              LinkedIn profil
+              {t('footer.linkedin')}
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -76,7 +78,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 md:mt-12 pt-6 md:pt-8">
           <div className="text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 prepisdokumentov.sk - František Harangózo. Všetky práva vyhradené.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>

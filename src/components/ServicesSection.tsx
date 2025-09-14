@@ -1,8 +1,10 @@
 import React from 'react';
 import { FileText, Camera, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 import servicesPhoto from '@/assets/services-photo.jpg';
 const ServicesSection = () => {
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -17,7 +19,11 @@ const ServicesSection = () => {
         <div className="text-center">
           
            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-             <span className="text-blue-400">PREPISOVANIE</span> TEXTOV Z <span className="text-blue-400">DOKUMENTOV</span> A OBRÁZKOV
+             {t('services.title').split(' ').map((word, index) => 
+               ['PREPISOVANIE', 'DOKUMENTOV'].includes(word) ? 
+                 <span key={index} className="text-blue-400">{word} </span> : 
+                 word + ' '
+             )}
            </h1>
         </div>
       </div>
@@ -37,11 +43,15 @@ const ServicesSection = () => {
             <div>
               
               <h1 className="text-5xl font-bold text-white leading-tight mb-6">
-                <span className="text-blue-400">PREPISOVANIE</span> TEXTOV Z <span className="text-blue-400">DOKUMENTOV</span> A OBRÁZKOV
+                {t('services.title').split(' ').map((word, index) => 
+                  ['PREPISOVANIE', 'DOKUMENTOV', 'TRANSCRIPTION', 'DOCUMENTS'].includes(word) ? 
+                    <span key={index} className="text-blue-400">{word} </span> : 
+                    word + ' '
+                )}
               </h1>
             </div>
             <p className="text-blue-100 leading-relaxed text-lg">
-              Digitalizácia osobných alebo firemných dát na mieru. Prinášame riešenia automatizovaného prepisu rôznych súborov alebo obrázkov do digitálnej podoby.
+              {t('services.subtitle')}
             </p>
           </div>
         </div>
@@ -68,16 +78,16 @@ const ServicesSection = () => {
                 <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                Prepisovanie textov a dokumentov
+                {t('services.documents.title')}
               </h3>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-              Digitalizujeme naskenované dokumenty a PDF súbory pomocou AI alebo OCR technológií. Prepisovanie textov z naskenovaných dokumentov alebo PDF.
+              {t('services.documents.description')}
             </p>
             
             <Button onClick={() => scrollToSection('dokumenty')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
-              Zistiť viac
+              {t('services.button')}
             </Button>
           </div>
 
@@ -90,16 +100,16 @@ const ServicesSection = () => {
                 <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                Prepisovanie textov z fotiek a obrázkov
+                {t('services.images.title')}
               </h3>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-              Rozpoznávame a prepísané texty z fotografií dokumentov, vizitkiek, štítkov a ďalších objektov s pokročilými algoritmami.
+              {t('services.images.description')}
             </p>
             
             <Button onClick={() => scrollToSection('fotky')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
-              Zistiť viac
+              {t('services.button')}
             </Button>
           </div>
 
@@ -112,16 +122,16 @@ const ServicesSection = () => {
                 <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                Prepisovanie audio a video nahrávok
+                {t('services.audio.title')}
               </h3>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-              Používame AI nástroje pre automatické rozpoznávanie reči. Prepíseme vaše nahrávky do textovej podoby a roztriedime podľa kľúčových slov.
+              {t('services.audio.description')}
             </p>
             
             <Button onClick={() => scrollToSection('audio-video')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
-              Zistiť viac
+              {t('services.button')}
             </Button>
           </div>
         </div>

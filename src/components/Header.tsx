@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './Logo';
 const Header = () => {
   const [activeSection, setActiveSection] = useState('titulka');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['titulka', 'o-nas', 'pre-koho', 'vystupny-format', 'softverove-riesenie', 'sluzby', 'kontakt'];
@@ -38,22 +40,22 @@ const Header = () => {
     setIsMobileMenuOpen(false); // Close mobile menu when navigating
   };
   const menuItems = [{
-    label: 'Naše služby',
+    label: t('nav.services'),
     id: 'sluzby'
   }, {
-    label: 'Pre koho',
+    label: t('nav.audience'),
     id: 'pre-koho'
   }, {
-    label: 'Výstupný formát',
+    label: t('nav.format'),
     id: 'vystupny-format'
   }, {
-    label: 'Softvérové riešenie',
+    label: t('nav.solution'),
     id: 'softverove-riesenie'
   }, {
-    label: 'O nás',
+    label: t('nav.about'),
     id: 'o-nas'
   }, {
-    label: 'Kontakt',
+    label: t('nav.contact'),
     id: 'kontakt'
   }];
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -67,6 +69,30 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
+          {/* Language Switcher - Desktop */}
+          <div className="hidden lg:flex items-center gap-1 bg-accent/50 rounded-full p-1">
+            <button
+              onClick={() => setLanguage('sk')}
+              className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                language === 'sk' 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              SK
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                language === 'en' 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              EN
+            </button>
+          </div>
+          
           <button 
             className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -103,6 +129,30 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center justify-center gap-1 bg-accent/50 rounded-full p-1 mt-6">
+                <button
+                  onClick={() => setLanguage('sk')}
+                  className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                    language === 'sk' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  SK
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                    language === 'en' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </nav>
           </div>
         </div>
