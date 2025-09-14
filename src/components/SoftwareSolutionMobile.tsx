@@ -57,7 +57,7 @@ const SoftwareSolutionMobile = () => {
               className="w-full p-6 h-auto flex flex-col items-center text-center hover:bg-gray-700/30 bg-gray-800/40 min-h-[80px]"
               onClick={() => toggleExpanded(index)}
             >
-              <h3 className="text-lg font-semibold text-white leading-tight mb-3 w-full break-words text-center px-4 hyphens-auto">
+              <h3 className="text-lg font-semibold text-white leading-tight mb-3 w-full break-words text-center px-4 whitespace-pre-line max-w-[280px] mx-auto">
                 {feature.title}
               </h3>
               <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
