@@ -16,10 +16,9 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
         <div className="text-center">
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            DIGITALIZAČNÉ &<br />
-            <span className="text-blue-400">AI SLUŽBY</span>
-          </h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+             <span className="text-blue-400">PREPISOVANIE</span> TEXTOV Z <span className="text-blue-400">DOKUMENTOV</span> A OBRÁZKOV
+           </h1>
         </div>
       </div>
 
@@ -38,8 +37,7 @@ const ServicesSection = () => {
             <div>
               
               <h1 className="text-5xl font-bold text-white leading-tight mb-6">
-                DIGITALIZAČNÉ &<br />
-                <span className="text-blue-400">AI SLUŽBY</span>
+                <span className="text-blue-400">PREPISOVANIE</span> TEXTOV Z <span className="text-blue-400">DOKUMENTOV</span> A OBRÁZKOV
               </h1>
             </div>
             <p className="text-blue-100 leading-relaxed text-lg">
