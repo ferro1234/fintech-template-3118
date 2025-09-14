@@ -16,7 +16,7 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
         <div className="text-center">
           <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6">
             <span className="text-blue-400">PREPISOVANIE TEXTOV</span> <span className="text-white">Z DOKUMENTOV A OBRAZKOV</span>
           </h1>
         </div>
@@ -36,7 +36,7 @@ const ServicesSection = () => {
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div>
               
-              <h1 className="text-5xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl font-bold leading-tight mb-6">
                 <span className="text-blue-400">PREPISOVANIE TEXTOV</span> <span className="text-white">Z DOKUMENTOV A OBRAZKOV</span>
               </h1>
             </div>
