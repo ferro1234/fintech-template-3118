@@ -20,9 +20,23 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Optimize bundle size
+    // Optimize bundle size and performance
     rollupOptions: {
       output: {
+        // Optimize asset naming for better caching
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') ?? [];
+          const extType = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType ?? '')) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/css/i.test(extType ?? '')) {
+            return `assets/styles/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
         manualChunks: {
           // Vendor chunk for stable libraries
           vendor: ['react', 'react-dom'],
@@ -42,11 +56,15 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    // Use default esbuild minifier for compatibility
+    // Minification and optimization
+    minify: 'esbuild',
+    target: 'es2020',
     // Optimize chunk size warnings
     chunkSizeWarningLimit: 1000,
     // Enable source maps in development only
     sourcemap: mode === 'development',
+    // Asset optimization
+    assetsInlineLimit: 4096, // Inline small assets as base64
   },
   // Optimize dev server
   optimizeDeps: {

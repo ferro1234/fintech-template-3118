@@ -1,14 +1,14 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://prepisdokumentov.sk/sitemap.xml
+
+# Performance optimization - block crawling of assets to save bandwidth
+Disallow: /assets/
+Disallow: /lovable-uploads/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
