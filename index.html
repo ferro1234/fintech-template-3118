@@ -45,18 +45,85 @@
     <link rel="modulepreload" href="/src/components/AboutSection.tsx">
     <link rel="modulepreload" href="/src/components/Footer.tsx">
     
+    <!-- Preload main CSS bundle -->
+    <link rel="preload" href="/assets/index-DYlOD16f.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/index-DYlOD16f.css"></noscript>
+    
     <!-- Critical CSS inline for better performance -->
     <style>
+      /* CSS Variables */
+      :root {
+        --background: 0 0% 8%;
+        --foreground: 0 0% 95%;
+        --card: 0 0% 12%;
+        --card-foreground: 0 0% 95%;
+        --primary: 0 0% 85%;
+        --primary-foreground: 0 0% 15%;
+        --secondary: 0 0% 18%;
+        --secondary-foreground: 0 0% 95%;
+        --muted: 0 0% 22%;
+        --muted-foreground: 0 0% 70%;
+        --accent: 0 0% 85%;
+        --accent-foreground: 0 0% 15%;
+        --border: 0 0% 22%;
+        --ring: 0 0% 85%;
+        --radius: 0.5rem;
+      }
+      
+      * {
+        box-sizing: border-box;
+        border-color: hsl(var(--border));
+      }
+      
       body { 
         font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-        background-color: hsl(0 0% 8%);
-        color: hsl(0 0% 95%);
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
         margin: 0;
         padding: 0;
         font-display: swap;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.025em;
       }
+      
+      /* Critical layout classes */
+      .min-h-screen { min-height: 100vh; }
+      .flex { display: flex; }
+      .flex-col { flex-direction: column; }
+      .bg-background { background-color: hsl(var(--background)); }
+      .text-foreground { color: hsl(var(--foreground)); }
+      .fixed { position: fixed; }
+      .top-0 { top: 0; }
+      .w-full { width: 100%; }
+      .z-50 { z-index: 50; }
+      .container { 
+        width: 100%; 
+        margin-left: auto; 
+        margin-right: auto; 
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+      }
+      @media (min-width: 640px) { .container { max-width: 640px; } }
+      @media (min-width: 768px) { .container { max-width: 768px; } }
+      @media (min-width: 1024px) { .container { max-width: 1024px; } }
+      @media (min-width: 1280px) { .container { max-width: 1280px; } }
+      
+      /* Header styles */
+      header {
+        backdrop-filter: blur(8px);
+        background-color: hsl(var(--card) / 0.8);
+        border-bottom: 1px solid hsl(var(--border));
+      }
+      
+      /* Navigation styles */
+      .nav-pill {
+        backdrop-filter: blur(13px);
+        background-color: hsl(var(--card));
+        border: 1px solid hsl(var(--border));
+        border-radius: 9999px;
+      }
+      
       .loading-spinner {
         display: flex;
         align-items: center;
@@ -69,16 +136,17 @@
         height: 3rem;
         width: 3rem;
         border: 2px solid transparent;
-        border-bottom-color: hsl(0 0% 85%);
+        border-bottom-color: hsl(var(--primary));
       }
       @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
+      
       /* Prevent layout shift */
       img[loading="lazy"] {
         min-height: 200px;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background: linear-gradient(90deg, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%);
         background-size: 200% 100%;
         animation: loading 1.5s infinite;
       }
