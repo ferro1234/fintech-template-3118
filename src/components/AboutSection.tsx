@@ -13,12 +13,12 @@ const AboutSection = () => {
               <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{t('about.title')}</h2>
               <p className="text-muted-foreground leading-relaxed">
                 {t('about.description')}{' '}
-                <a href="https://www.spravawebstranok.sk" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2 hover:decoration-primary/70 font-medium transition-colors">
-                  {t('about.link1')}
+                 <a href="https://www.spravawebstranok.sk" target="_blank" rel="noopener noreferrer" aria-label="Návštíviť webstránku Správa Webstránok" className="text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-500 font-medium transition-colors">
+                   {t('about.link1')}
                 </a>{' '}
                 {t('about.linkText')}{' '}
-                <a href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2 hover:decoration-primary/70 font-medium transition-colors">
-                  {t('about.link2')}
+                 <a href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" target="_blank" rel="noopener noreferrer" aria-label="František Harangózo LinkedIn profil" className="text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-500 font-medium transition-colors">
+                   {t('about.link2')}
                 </a>.
               </p>
             </div>

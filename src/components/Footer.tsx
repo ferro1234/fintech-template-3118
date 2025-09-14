@@ -21,8 +21,8 @@ const Footer = () => {
                 </div>
                 <div className="md:text-center md:space-y-2">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.phone')}</h3>
-                  <a href="tel:0905321308" className="text-muted-foreground hover:text-primary transition-colors block">
-                    0905 321 308
+                   <a href="tel:0905321308" aria-label="Zavolať na telefónne číslo 0905 321 308" className="text-blue-600 hover:text-blue-500 transition-colors block">
+                     0905 321 308
                   </a>
                 </div>
               </div>
@@ -35,8 +35,8 @@ const Footer = () => {
                 </div>
                 <div className="md:text-center md:space-y-2">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.email')}</h3>
-                  <a href="mailto:harangozo@sketch.sk" className="text-muted-foreground hover:text-primary transition-colors block">
-                    harangozo@sketch.sk
+                   <a href="mailto:harangozo@sketch.sk" aria-label="Poslať email na harangozo@sketch.sk" className="text-blue-600 hover:text-blue-500 transition-colors block">
+                     harangozo@sketch.sk
                   </a>
                 </div>
               </div>
@@ -49,11 +49,12 @@ const Footer = () => {
                 </div>
                 <div className="md:text-center md:space-y-2">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.website')}</h3>
-                  <a 
-                    href="https://www.spravawebstranok.sk" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors block underline decoration-2 underline-offset-2 font-medium"
+                   <a 
+                     href="https://www.spravawebstranok.sk" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     aria-label="Návštíviť webstránku Správa Webstránok"
+                     className="text-blue-600 hover:text-blue-500 transition-colors block underline decoration-2 underline-offset-2 font-medium"
                   >
                     spravawebstranok.sk
                   </a>
@@ -63,11 +64,12 @@ const Footer = () => {
           </div>
           
           <div className="pt-8">
-            <a 
-              href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors underline decoration-2 underline-offset-2 font-medium"
+             <a 
+               href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="František Harangózo LinkedIn profil"
+               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-colors underline decoration-2 underline-offset-2 font-medium"
             >
               {t('footer.linkedin')}
               <ExternalLink className="w-4 h-4" />

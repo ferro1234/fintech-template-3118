@@ -126,7 +126,7 @@ const Pricing = () => {
         </div>
         
         <div className="text-center text-muted-foreground">
-          Have questions? <a href="#" className="text-primary hover:underline">Contact our sales team</a>
+          Have questions? <a href="mailto:harangozo@sketch.sk" aria-label="Kontaktovať náš predajný tím emailom" className="text-blue-600 hover:text-blue-500 underline">Contact our sales team</a>
         </div>
       </div>
     </section>
