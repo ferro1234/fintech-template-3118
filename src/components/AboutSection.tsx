@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import profilePhoto from '@/assets/profile-photo.jpg';
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -25,7 +26,7 @@ const AboutSection = () => {
             <div className="flex justify-center">
               <div className="w-64 h-64 rounded-3xl overflow-hidden">
                 <img 
-                  src="/src/assets/profile-photo.jpg" 
+                  src={profilePhoto} 
                   alt="František Harangózo" 
                   className="w-full h-full object-cover"
                 />
