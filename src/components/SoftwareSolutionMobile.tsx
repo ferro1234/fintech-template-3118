@@ -54,17 +54,22 @@ const SoftwareSolutionMobile = () => {
             {/* Header - Always visible */}
             <Button
               variant="ghost"
-              className="w-full p-6 h-auto flex justify-between items-center text-left hover:bg-gray-700/30"
+              className="w-full p-6 h-auto flex justify-between items-center text-left hover:bg-gray-700/30 bg-gray-800/40"
               onClick={() => toggleExpanded(index)}
             >
-              <h3 className="text-lg font-semibold text-white leading-tight pr-4">
-                {feature.title}
-              </h3>
-              {isExpanded ? (
-                <ChevronUp className="w-5 h-5 text-white flex-shrink-0" />
-              ) : (
-                <ChevronDown className="w-5 h-5 text-white flex-shrink-0" />
-              )}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-white leading-tight pr-4 mb-2">
+                  {feature.title}
+                </h3>
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <span>{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
+                  {isExpanded ? (
+                    <ChevronUp className="w-4 h-4 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-gray-400" />
+                  )}
+                </div>
+              </div>
             </Button>
 
             {/* Expandable content */}

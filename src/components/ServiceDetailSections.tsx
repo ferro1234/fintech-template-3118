@@ -36,11 +36,11 @@ const ServiceDetailSections = () => {
             <div className="flex justify-center">
               <div className="w-full max-w-lg space-y-4">
                 <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-                  <img 
-                    src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
-                    alt="PDF, obrazok, audio, video"
-                    className="w-full h-60 object-contain"
-                  />
+                   <img 
+                     src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
+                     alt="PDF, obrazok, audio, video"
+                     className="w-full h-120 object-contain"
+                   />
                 </div>
                 <p className="text-lg md:text-xl text-muted-foreground text-center">
                   pdf, obrazok, audio, video
@@ -58,11 +58,11 @@ const ServiceDetailSections = () => {
             <div className="flex justify-center order-2 md:order-1">
               <div className="w-full max-w-lg space-y-4">
                 <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-                  <img 
-                    src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
-                    alt="Digitalizujeme dokumenty do novej podoby"
-                    className="w-full h-60 object-contain"
-                  />
+                   <img 
+                     src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
+                     alt="Digitalizujeme dokumenty do novej podoby"
+                     className="w-full h-120 object-contain"
+                   />
                 </div>
                 <p className="text-lg md:text-xl text-muted-foreground text-center">
                   Digitalizujeme dokumenty do novej podoby
@@ -104,11 +104,11 @@ const ServiceDetailSections = () => {
             <div className="flex justify-center">
               <div className="w-full max-w-lg space-y-4">
                 <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-                  <img 
-                    src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
-                    alt="Zvyšujeme efektivitu práce"
-                    className="w-full h-60 object-contain"
-                  />
+                   <img 
+                     src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
+                     alt="Zvyšujeme efektivitu práce"
+                     className="w-full h-120 object-contain"
+                   />
                 </div>
                 <p className="text-lg md:text-xl text-muted-foreground text-center">
                   Zvyšujeme efektivitu práce
