@@ -64,8 +64,8 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
-          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+          <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(135deg, #3756ad, #4a67c4)'
         }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
@@ -86,8 +86,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
-          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+          <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(135deg, #3756ad, #4a67c4)'
         }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
@@ -108,8 +108,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
-          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+          <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(135deg, #3756ad, #4a67c4)'
         }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
