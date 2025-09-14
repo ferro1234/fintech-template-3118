@@ -80,6 +80,7 @@ const SoftwareSolutionMobile = () => {
                     src={feature.image}
                     alt={feature.title}
                     className="w-full h-48 object-cover rounded-xl"
+                    loading="lazy"
                   />
                   
                   <p className="text-gray-300 leading-relaxed">

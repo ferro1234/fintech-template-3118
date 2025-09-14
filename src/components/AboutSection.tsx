@@ -29,6 +29,7 @@ const AboutSection = () => {
                   src={profilePhoto} 
                   alt="František Harangózo" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
