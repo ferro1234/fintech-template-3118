@@ -52,7 +52,6 @@
     <link rel="preload" href="/assets/audio-intro.ogg" as="audio" type="audio/ogg">
     
     <!-- Preload critical scripts and modules -->
-    <link rel="preload" href="https://cdn.gpteng.co/gptengineer.js" as="script" crossorigin>
     <link rel="modulepreload" href="/src/main.tsx">
     <link rel="modulepreload" href="/src/App.tsx">
     <link rel="modulepreload" href="/src/pages/Index.tsx">
@@ -364,8 +363,8 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" async></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
   </body>
 </html>
