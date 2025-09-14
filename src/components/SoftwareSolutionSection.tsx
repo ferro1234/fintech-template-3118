@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SoftwareSolutionMobile from './SoftwareSolutionMobile';
-import solutionCheck from '@/assets/solution-check.jpg';
+import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
 import example1 from '@/assets/example-1.jpg';
@@ -20,7 +20,7 @@ const SoftwareSolutionSection = () => {
   
   const solutionFeatures = [
     {
-      image: solutionCheck,
+      image: solutionNoMonthly,
       title: t('solution.feature1.title'),
       description: t('solution.feature1.description')
     },
