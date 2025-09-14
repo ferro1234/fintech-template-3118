@@ -1,16 +1,16 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
 import ServiceDetailSections from '@/components/ServiceDetailSections';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
-// Lazy load components that are not immediately visible
-const TargetAudienceSection = React.lazy(() => import('@/components/TargetAudienceSection'));
-const OutputFormatSection = React.lazy(() => import('@/components/OutputFormatSection'));
-const SoftwareSolutionSection = React.lazy(() => import('@/components/SoftwareSolutionSection'));
-const AboutSection = React.lazy(() => import('@/components/AboutSection'));
-const Footer = React.lazy(() => import('@/components/Footer'));
+// Import components normally to avoid dynamic import issues
+import TargetAudienceSection from '@/components/TargetAudienceSection';
+import OutputFormatSection from '@/components/OutputFormatSection';
+import SoftwareSolutionSection from '@/components/SoftwareSolutionSection';
+import AboutSection from '@/components/AboutSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
@@ -20,26 +20,13 @@ const Index = () => {
         <ServicesSection />
         <ServiceDetailSections />
         
-        <Suspense fallback={<LoadingSpinner />}>
-          <TargetAudienceSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <OutputFormatSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <SoftwareSolutionSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <AboutSection />
-        </Suspense>
+        <TargetAudienceSection />
+        <OutputFormatSection />
+        <SoftwareSolutionSection />
+        <AboutSection />
       </main>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </div>
   );
 };
