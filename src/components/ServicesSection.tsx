@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText, Camera, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import servicesPhoto from '@/assets/services-photo.jpg';
 
 const ServicesSection = () => {
   return (
@@ -22,15 +23,11 @@ const ServicesSection = () => {
           {/* Photo - Left column */}
           <div className="flex justify-center">
             <div className="w-full max-w-lg">
-              <div className="w-full h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Camera className="w-8 h-8 text-blue-400" />
-                  </div>
-                  <p className="text-blue-300 font-medium text-base">Miesto pre vašu fotografiu</p>
-                  <p className="text-blue-400/70 text-sm mt-2">Odporúčaná veľkosť: 400x600px</p>
-                </div>
-              </div>
+              <img 
+                src={servicesPhoto} 
+                alt="Realizátor digitalizačných služieb" 
+                className="w-auto h-[500px] object-cover rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
           
@@ -59,15 +56,11 @@ const ServicesSection = () => {
       <div className="lg:hidden relative z-10 max-w-6xl mx-auto mb-0">
         <div className="flex justify-center mb-0">
           <div className="w-full max-w-md">
-            <div className="w-full h-[400px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Camera className="w-6 h-6 text-blue-400" />
-                </div>
-                <p className="text-blue-300 font-medium text-sm">Miesto pre vašu fotografiu</p>
-                <p className="text-blue-400/70 text-xs mt-2">Odporúčaná veľkosť: 400x600px</p>
-              </div>
-            </div>
+            <img 
+              src={servicesPhoto} 
+              alt="Realizátor digitalizačných služieb" 
+              className="w-auto h-[400px] object-cover rounded-2xl shadow-2xl"
+            />
           </div>
         </div>
       </div>
