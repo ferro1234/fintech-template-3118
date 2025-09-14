@@ -89,9 +89,9 @@ const ServicesSection = memo(() => {
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                {t('services.documents.title')}
-              </h3>
+               <h2 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
+                 {t('services.documents.title')}
+               </h2>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
@@ -111,9 +111,9 @@ const ServicesSection = memo(() => {
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                {t('services.images.title')}
-              </h3>
+               <h2 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
+                 {t('services.images.title')}
+               </h2>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
@@ -133,9 +133,9 @@ const ServicesSection = memo(() => {
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
-                {t('services.audio.title')}
-              </h3>
+               <h2 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
+                 {t('services.audio.title')}
+               </h2>
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
