@@ -175,7 +175,7 @@ const SoftwareSolutionSection = memo(() => {
           </Carousel>
           
           {/* Auto-scroll indicator dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-4 mt-6">
             {solutionFeatures.map((_, index) => (
               <div 
                 key={index} 
