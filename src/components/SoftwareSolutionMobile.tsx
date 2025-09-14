@@ -6,7 +6,7 @@ import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
 
 const SoftwareSolutionMobile = () => {
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [expandedItems, setExpandedItems] = useState<number[]>([0]);
 
   const solutionFeatures = [
     {
@@ -39,8 +39,8 @@ const SoftwareSolutionMobile = () => {
   const toggleExpanded = (index: number) => {
     setExpandedItems(prev => 
       prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+        ? []
+        : [index]
     );
   };
 
@@ -57,7 +57,7 @@ const SoftwareSolutionMobile = () => {
               className="w-full p-6 h-auto flex flex-col items-center text-center hover:bg-gray-700/30 bg-gray-800/40 min-h-[80px]"
               onClick={() => toggleExpanded(index)}
             >
-              <h3 className="text-lg font-semibold text-white leading-tight mb-3 max-w-full">
+              <h3 className="text-lg font-semibold text-white leading-tight mb-3 max-w-full break-words text-center px-2">
                 {feature.title}
               </h3>
               <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
