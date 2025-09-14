@@ -7,6 +7,9 @@ import SoftwareSolutionMobile from './SoftwareSolutionMobile';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
+import example1 from '@/assets/example-1.jpg';
+import example2 from '@/assets/example-2.jpg';
+import example3 from '@/assets/example-3.jpg';
 
 const SoftwareSolutionSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
@@ -45,16 +48,16 @@ const SoftwareSolutionSection = () => {
   
   const examples = [
     {
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=600",
-      title: "Príklad automatizácie PDF formulárov"
+      image: example1,
+      title: "Automatizácia PDF formulárov a certifikátov"
     },
     {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600", 
-      title: "Webová aplikácia na mieru"
+      image: example2,
+      title: "Webová aplikácia pre správu výsledkov testov"
     },
     {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600",
-      title: "Automatizácia procesov"
+      image: example3,
+      title: "Systém na správu atestov a dokumentácie"
     }
   ];
 
