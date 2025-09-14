@@ -31,26 +31,28 @@
           "@type": "Website",
           "@id": "https://prepis-dokumentov.sk/#website",
           "url": "https://prepis-dokumentov.sk/",
-          "name": "Prepis dokumentov z textov a PDF",
-          "description": "Digitalizácia osobných alebo firemných dát na mieru. Prinášame riešenia automatizovaného prepisu rôznych súborov alebo obrázkov do digitálnej podoby.",
+          "name": "Document and PDF Transcription Services",
+          "alternateName": "Prepis dokumentov z textov a PDF",
+          "description": "Custom digitization of personal or corporate data. We provide automated transcription solutions for various files and images into digital format.",
           "publisher": {
             "@id": "https://prepis-dokumentov.sk/#organization"
           },
-          "inLanguage": "sk"
+          "inLanguage": ["en", "sk"]
         },
         {
           "@type": "WebPage",
           "@id": "https://prepis-dokumentov.sk/#webpage",
           "url": "https://prepis-dokumentov.sk/",
-          "name": "Prepis dokumentov z textov a PDF - Digitalizácia dokumentov",
+          "name": "Document and PDF Transcription - Document Digitization Services",
+          "alternateName": "Prepis dokumentov z textov a PDF - Digitalizácia dokumentov",
           "isPartOf": {
             "@id": "https://prepis-dokumentov.sk/#website"
           },
           "about": {
             "@id": "https://prepis-dokumentov.sk/#organization"
           },
-          "description": "Digitalizácia osobných alebo firemných dát na mieru. Prinášame riešenia automatizovaného prepisu rôznych súborov alebo obrázkov do digitálnej podoby.",
-          "inLanguage": "sk"
+          "description": "Custom digitization of personal or corporate data. We provide automated transcription solutions for various files and images into digital format.",
+          "inLanguage": ["en", "sk"]
         },
         {
           "@type": "Organization",
@@ -63,40 +65,57 @@
           },
           "sameAs": [
             "@cosmos_tasks"
-          ]
+          ],
+          "description": "Professional document digitization and transcription services for individuals and businesses",
+          "knowsAbout": ["Document Transcription", "OCR Technology", "Audio Transcription", "PDF Processing", "Image Digitization"]
         },
         {
           "@type": "Service",
-          "name": "Prepis dokumentov a PDF súborov",
-          "description": "Automatizovaný prepis dokumentov, skenovaných PDF súborov a obrázkov do digitálnej podoby",
+          "name": "Document and PDF Transcription",
+          "alternateName": "Prepis dokumentov a PDF súborov",
+          "description": "Automated transcription of documents, scanned PDF files and images into digital format",
           "provider": {
             "@id": "https://prepis-dokumentov.sk/#organization"
           },
-          "serviceType": "Digitalizácia dokumentov",
-          "category": "Prepis textu",
-          "areaServed": "Slovensko"
+          "serviceType": "Document Digitization",
+          "category": "Text Transcription",
+          "areaServed": ["Slovakia", "Slovensko"],
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Service", 
-          "name": "Digitalizácia obrázkov s textom",
-          "description": "Spracovanie obrázkov obsahujúcich text pomocí OCR technológie",
+          "name": "Image Text Digitization",
+          "alternateName": "Digitalizácia obrázkov s textom",
+          "description": "Processing images containing text using OCR technology",
           "provider": {
             "@id": "https://prepis-dokumentov.sk/#organization"
           },
-          "serviceType": "OCR spracovanie",
-          "category": "Digitalizácia",
-          "areaServed": "Slovensko"
+          "serviceType": "OCR Processing",
+          "category": "Image Digitization",
+          "areaServed": ["Slovakia", "Slovensko"],
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Service",
-          "name": "Prepis audio a video súborov", 
-          "description": "Automatická transkripcia audio a video nahrávok do textovej podoby",
+          "name": "Audio and Video Transcription",
+          "alternateName": "Prepis audio a video súborov", 
+          "description": "Automatic transcription of audio and video recordings into text format",
           "provider": {
             "@id": "https://prepis-dokumentov.sk/#organization"
           },
-          "serviceType": "Audio transkripcia",
-          "category": "Prepis zvuku",
-          "areaServed": "Slovensko"
+          "serviceType": "Audio Transcription",
+          "category": "Sound Transcription",
+          "areaServed": ["Slovakia", "Slovensko"],
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
         }
       ]
     }
