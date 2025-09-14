@@ -19,8 +19,41 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/ySn0lBF5uuftQwa938DlySole5A3/uploads/1757867735390-logo-sws.svg">
+    
+    <!-- Critical CSS inline for better performance -->
+    <style>
+      body { 
+        font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: hsl(0 0% 8%);
+        color: hsl(0 0% 95%);
+        margin: 0;
+        padding: 0;
+        font-display: swap;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .loading-spinner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 1.5rem;
+      }
+      .spinner {
+        animation: spin 1s linear infinite;
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+        border: 2px solid transparent;
+        border-bottom-color: hsl(0 0% 85%);
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
     
     <!-- Structured Data - Slovak Version -->
     <script type="application/ld+json">
