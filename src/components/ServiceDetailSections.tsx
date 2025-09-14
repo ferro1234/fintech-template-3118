@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import serviceDocuments from '@/assets/service-documents.jpg';
 import servicePhotos from '@/assets/service-photos.jpg';
 import serviceAudio from '@/assets/service-audio.jpg';
+import audioTranscription from '@/assets/audio-transcription.jpg';
 
 const ServiceDetailSections = () => {
   const { t } = useLanguage();
@@ -107,7 +108,7 @@ const ServiceDetailSections = () => {
               <div className="w-full max-w-lg space-y-4">
                 <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
                    <img 
-                     src="/lovable-uploads/1dbba9c9-5aae-4230-8b7a-4e534bc13e3e.png"
+                     src={audioTranscription}
                      alt="Zvyšujeme efektivitu práce"
                      className="w-full h-96 object-contain"
                    />
