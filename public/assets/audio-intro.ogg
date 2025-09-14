@@ -1,0 +1,13 @@
+# Placeholder for audio-intro.ogg
+# This file represents where the OGG audio file would be placed
+# for Open Graph audio content support
+
+# To add an actual OGG file:
+# 1. Upload your .ogg audio file to this location
+# 2. The Open Graph meta tags will automatically reference it
+# 3. Social media platforms that support audio will use this file
+
+# Supported audio formats for Open Graph:
+# - audio/ogg
+# - audio/mpeg
+# - audio/wav
