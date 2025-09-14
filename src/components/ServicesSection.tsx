@@ -41,9 +41,7 @@ const ServicesSection = () => {
               </h1>
             </div>
             <p className="text-blue-100 leading-relaxed text-xl">
-              Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
-              Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
-              s vysokou presnosťou a efektivitou.
+              Zaoberáme sa automatizáciou a digitalizáciou obsahu pre firmy alebo jednotlivcov. Prinášame riešenia automatizovaného prepisu rôznych suborov alebo obrázkov do digitalnej podoby.
             </p>
           </div>
         </div>
