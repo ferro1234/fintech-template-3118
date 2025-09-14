@@ -235,10 +235,12 @@ const SoftwareSolutionSection = memo(() => {
                       key={index}
                       onClick={() => setCurrentExample(index)}
                       aria-label={`Go to example ${index + 1}`}
-                      className={`w-3 h-3 rounded-full transition-colors ${
+                      className="p-2 transition-colors"
+                    >
+                      <div className={`w-3 h-3 rounded-full transition-colors ${
                         index === currentExample ? 'bg-primary' : 'bg-muted'
-                      }`}
-                    />
+                      }`} />
+                    </button>
                   ))}
                 </div>
               </div>
