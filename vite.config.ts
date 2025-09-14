@@ -19,4 +19,51 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimize bundle size
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunk for stable libraries
+          vendor: ['react', 'react-dom'],
+          // UI components chunk
+          ui: [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-scroll-area',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast',
+          ],
+          // Utils and smaller libraries
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+        },
+      },
+    },
+    // Enable gzip compression
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+    // Optimize chunk size warnings
+    chunkSizeWarningLimit: 1000,
+    // Enable source maps in development only
+    sourcemap: mode === 'development',
+  },
+  // Optimize dev server
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-dialog',
+      'lucide-react',
+    ],
+  },
 }));
