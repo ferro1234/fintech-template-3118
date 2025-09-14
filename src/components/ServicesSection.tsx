@@ -62,45 +62,75 @@ const ServicesSection = () => {
 
       {/* Services Grid */}
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
-          <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-center min-h-80 rounded-2xl">
-            <FileText className="w-12 h-12 text-white mx-auto mb-6" strokeWidth={1.5} />
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Prepisovanie textov a dokumentov
-            </h3>
-            <p className="text-white/90 text-sm mb-6 leading-relaxed">
+          <div className="group bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="transition-transform duration-300 group-hover:scale-110">
+                <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white leading-tight">
+                Prepisovanie textov a dokumentov
+              </h3>
+            </div>
+            
+            <p className="text-gray-300 leading-relaxed mb-6 text-sm">
               Digitalizujeme naskenované dokumenty a PDF súbory pomocou pokročilých AI modelov a OCR technológií pre vysokú presnosť prepisu.
             </p>
-            <Button onClick={() => scrollToSection('dokumenty')} className="bg-white text-blue-600 hover:bg-blue-50 font-semibold">
+            
+            <Button 
+              onClick={() => scrollToSection('dokumenty')} 
+              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
+              variant="outline"
+            >
               Zistiť viac
             </Button>
           </div>
 
           {/* Service 2 */}
-          <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 text-center min-h-80 rounded-2xl">
-            <Camera className="w-12 h-12 text-white mx-auto mb-6" strokeWidth={1.5} />
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Prepisovanie textov z fotiek a obrázkov
-            </h3>
-            <p className="text-white/90 text-sm mb-6 leading-relaxed">
+          <div className="group bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="transition-transform duration-300 group-hover:scale-110">
+                <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white leading-tight">
+                Prepisovanie textov z fotiek a obrázkov
+              </h3>
+            </div>
+            
+            <p className="text-gray-300 leading-relaxed mb-6 text-sm">
               Rozpoznávame a prepísame texty z fotografií dokumentov, vizitkiek, štítkov a ďalších objektov s pokročilými algoritmami na zlepšenie kvality obrazu.
             </p>
-            <Button onClick={() => scrollToSection('fotky')} className="bg-white text-blue-600 hover:bg-blue-50 font-semibold">
+            
+            <Button 
+              onClick={() => scrollToSection('fotky')} 
+              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
+              variant="outline"
+            >
               Zistiť viac
             </Button>
           </div>
 
           {/* Service 3 */}
-          <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-8 text-center min-h-80 rounded-2xl">
-            <Mic className="w-12 h-12 text-white mx-auto mb-6" strokeWidth={1.5} />
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Prepisovanie audio a video nahrávok
-            </h3>
-            <p className="text-white/90 text-sm mb-6 leading-relaxed">
+          <div className="group bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="transition-transform duration-300 group-hover:scale-110">
+                <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white leading-tight">
+                Prepisovanie audio a video nahrávok
+              </h3>
+            </div>
+            
+            <p className="text-gray-300 leading-relaxed mb-6 text-sm">
               Používame AI nástroje pre automatické rozpoznávanie reči. Prepíseme vaše nahrávky do textovej podoby a roztriedime podľa kľúčových slov.
             </p>
-            <Button onClick={() => scrollToSection('audio-video')} className="bg-white text-blue-600 hover:bg-blue-50 font-semibold">
+            
+            <Button 
+              onClick={() => scrollToSection('audio-video')} 
+              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
+              variant="outline"
+            >
               Zistiť viac
             </Button>
           </div>

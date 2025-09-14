@@ -54,11 +54,11 @@ const SoftwareSolutionMobile = () => {
             {/* Header - Always visible */}
             <Button
               variant="ghost"
-              className="w-full p-6 h-auto flex justify-between items-center text-left hover:bg-gray-700/30 bg-gray-800/40"
+              className="w-full p-6 h-auto flex justify-between items-center text-left hover:bg-gray-700/30 bg-gray-800/40 min-h-[80px]"
               onClick={() => toggleExpanded(index)}
             >
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white leading-tight pr-4 mb-2">
+              <div className="flex-1 pr-4">
+                <h3 className="text-lg font-semibold text-white leading-tight mb-3">
                   {feature.title}
                 </h3>
                 <div className="flex items-center gap-2 text-sm text-gray-400">
