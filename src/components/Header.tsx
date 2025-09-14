@@ -41,12 +41,11 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: 'Titulka', id: 'titulka' },
-    { label: 'O nás', id: 'o-nas' },
+    { label: 'Naše služby', id: 'sluzby' },
     { label: 'Pre koho', id: 'pre-koho' },
     { label: 'Výstupný formát', id: 'vystupny-format' },
     { label: 'Softvérové riešenie', id: 'softverove-riesenie' },
-    { label: 'Naše služby', id: 'sluzby' },
+    { label: 'O nás', id: 'o-nas' },
     { label: 'Kontakt', id: 'kontakt' }
   ];
 
