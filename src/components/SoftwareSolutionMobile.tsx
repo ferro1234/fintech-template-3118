@@ -61,11 +61,11 @@ const SoftwareSolutionMobile = () => {
                 {feature.title}
               </h3>
               <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-                <span>{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
+                <span className="text-blue-400 font-medium animate-pulse">{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
                 {isExpanded ? (
-                  <ChevronUp className="w-4 h-4 text-gray-400" />
+                  <ChevronUp className="w-4 h-4 text-blue-400" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-400" />
+                  <ChevronDown className="w-4 h-4 text-blue-400" />
                 )}
               </div>
             </Button>
