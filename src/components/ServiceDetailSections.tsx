@@ -21,16 +21,16 @@ const ServiceDetailSections = () => {
                 {t('detail.documents.description')}
               </p>
               
-              <h4 className="text-xl font-semibold text-foreground mt-6">
-                {t('detail.documents.scanned.title')}
-              </h4>
+               <h3 className="text-xl font-semibold text-foreground mt-6">
+                 {t('detail.documents.scanned.title')}
+               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {t('detail.documents.scanned.description')}
               </p>
               
-              <h4 className="text-xl font-semibold text-foreground mt-6">
-                {t('detail.documents.pdf.title')}
-              </h4>
+               <h3 className="text-xl font-semibold text-foreground mt-6">
+                 {t('detail.documents.pdf.title')}
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {t('detail.documents.pdf.description')}
               </p>
