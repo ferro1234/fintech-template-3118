@@ -79,6 +79,9 @@ const SoftwareSolutionMobile = () => {
                   <img 
                     src={feature.image}
                     alt={feature.title}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="w-full h-48 object-cover rounded-xl"
                   />
                   

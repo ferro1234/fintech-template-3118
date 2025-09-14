@@ -134,6 +134,9 @@ const SoftwareSolutionSection = () => {
                         <img 
                           src={feature.image}
                           alt={feature.title}
+                          loading="lazy"
+                          decoding="async"
+                          fetchPriority="low"
                           className="w-full h-64 object-cover rounded-xl shadow-2xl border border-gray-600/30"
                         />
                       </div>
@@ -203,6 +206,9 @@ const SoftwareSolutionSection = () => {
                   <img 
                     src={examples[currentExample].image}
                     alt={examples[currentExample].title}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="w-full h-full object-cover"
                   />
                   

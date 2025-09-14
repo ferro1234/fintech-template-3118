@@ -42,6 +42,9 @@ const ServiceDetailSections = () => {
                    <img 
                      src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
                      alt="PDF, obrazok, audio, video"
+                     loading="lazy"
+                     decoding="async"
+                     fetchPriority="low"
                      className="w-full h-96 object-contain"
                    />
                 </div>
@@ -64,6 +67,9 @@ const ServiceDetailSections = () => {
                    <img 
                      src="/lovable-uploads/35295c25-6566-4eed-b87a-b03b03cb6ec2.png"
                      alt="Digitalizujeme dokumenty do novej podoby"
+                     loading="lazy"
+                     decoding="async"
+                     fetchPriority="low"
                      className="w-full h-96 object-contain"
                    />
                 </div>
@@ -110,6 +116,9 @@ const ServiceDetailSections = () => {
                    <img 
                      src={audioTranscription}
                      alt="Zvyšujeme efektivitu práce"
+                     loading="lazy"
+                     decoding="async"
+                     fetchPriority="low"
                      className="w-full h-96 object-contain"
                    />
                 </div>
