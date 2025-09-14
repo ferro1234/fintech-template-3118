@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
+
 import AboutSection from '@/components/AboutSection';
 import TargetAudienceSection from '@/components/TargetAudienceSection';
 import OutputFormatSection from '@/components/OutputFormatSection';
@@ -17,7 +17,7 @@ const Index = () => {
       <main>
         <ServicesSection />
         <ServiceDetailSections />
-        <HeroSection />
+        
         <TargetAudienceSection />
         <OutputFormatSection />
         <SoftwareSolutionSection />
