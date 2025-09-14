@@ -1,21 +1,23 @@
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="o-nas" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="cosmic-card rounded-3xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground">O nás</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{t('about.title')}</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Volám sa František Harangózo a zaoberám sa automatizáciou a digitalizáciou obsahu pre firmy alebo jednotlivcov. V spolupráci s programátormi vám prinášam riešenia v podobe automatizácie a webovej prezentácie. Moje osobné skúsenosti vychádzajú so 16 ročnej praxe pri tvorbe web stránok a web aplikácii. Viac informácii o mňe nájdete na{' '}
+                {t('about.description')}{' '}
                 <a href="https://www.spravawebstranok.sk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  spravawebstranok.sk
+                  {t('about.link1')}
                 </a>{' '}
-                alebo na mojom osobnom{' '}
+                {t('about.linkText')}{' '}
                 <a href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  linkedin profile
+                  {t('about.link2')}
                 </a>.
               </p>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
+import { useLanguage } from '@/contexts/LanguageContext';
 import SoftwareSolutionMobile from './SoftwareSolutionMobile';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
@@ -12,32 +13,33 @@ const SoftwareSolutionSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
   
   const solutionFeatures = [
     {
       image: solutionNoMonthly,
-      title: "Riešenie vášho problému bez mesačných poplatkov",
-      description: "Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov."
+      title: t('solution.feature1.title'),
+      description: t('solution.feature1.description')
     },
     {
       image: solutionDesign,
-      title: "Nový vzhľad výstupných dát",
-      description: "Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.",
+      title: t('solution.feature2.title'),
+      description: t('solution.feature2.description'),
       features: [
-        'Generovanie vizitiek',
-        'Generovanie nálepiek, štítkov', 
-        'Generovanie výročných správ',
-        'Generovanie QR kódov',
-        'Generovanie cenových ponúk',
-        'Generovanie objednávok',
-        'Generovanie grafov a tabuliek'
+        t('solution.features.1'),
+        t('solution.features.2'),
+        t('solution.features.3'),
+        t('solution.features.4'),
+        t('solution.features.5'),
+        t('solution.features.6'),
+        t('solution.features.7')
       ]
     },
     {
       image: solutionAutomation,
-      title: "Automatizácia procesov",
-      description: "Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.",
-      additionalText: "V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru."
+      title: t('solution.feature3.title'),
+      description: t('solution.feature3.description'),
+      additionalText: t('solution.feature3.additional')
     }
   ];
   
@@ -106,7 +108,7 @@ const SoftwareSolutionSection = () => {
     <section ref={sectionRef} id="softverove-riesenie" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-16">
-          Softvérové riešenie na mieru
+          {t('solution.title')}
         </h2>
         
         {/* Desktop carousel */}
@@ -188,7 +190,7 @@ const SoftwareSolutionSection = () => {
           {/* Example case study */}
           <div className="cosmic-card rounded-2xl p-8">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-              Príklad riešenia
+              {t('solution.example.title')}
             </h3>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -232,33 +234,33 @@ const SoftwareSolutionSection = () => {
               {/* Case study text */}
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground mb-3">Problém:</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-3">{t('solution.example.problem')}</h4>
                   <p className="text-muted-foreground leading-relaxed mb-3">
-                    Klient ručne prepisoval hodnoty z jedného PDF formulára do druhého.
+                    {t('solution.example.description1')}
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-3">
-                    Napriek tomu, že sme už pred rokmi vytvorili editovateľný PDF formulár s dizajnom na mieru, ručné kopírovanie z iných dokumentov bolo zdĺhavé, chybové a frustrujúce.
+                    {t('solution.example.description2')}
                   </p>
                   
                   <div className="flex items-center gap-2 mb-2">
                     <XCircle className="w-5 h-5 text-red-500" />
-                    <span className="text-muted-foreground">AI zatiaľ nebola spoľahlivá – vždy tam bola nejaká chybička.</span>
+                    <span className="text-muted-foreground">{t('solution.example.aiIssue')}</span>
                   </div>
                   
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-muted-foreground">Preto sme išli cestou webovej aplikácie na mieru.</span>
+                    <span className="text-muted-foreground">{t('solution.example.webSolution')}</span>
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground mb-3">Riešenie:</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-3">{t('solution.example.solution')}</h4>
                   <div className="space-y-2">
                     {[
-                      'čítanie údajov priamo z PDF súboru',
-                      'uloženie do databázy', 
-                      'automatické predvyplnenie nového formulára',
-                      'export do PDF s dizajnom a brandingom klienta'
+                      t('solution.steps.1'),
+                      t('solution.steps.2'), 
+                      t('solution.steps.3'),
+                      t('solution.steps.4')
                     ].map((item, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />
@@ -271,13 +273,13 @@ const SoftwareSolutionSection = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <Target className="w-5 h-5 text-primary" />
-                    <h4 className="text-lg font-semibold text-foreground">Čo z toho má klient:</h4>
+                    <h4 className="text-lg font-semibold text-foreground">{t('solution.example.benefits')}</h4>
                   </div>
                   <div className="space-y-2">
                     {[
-                      'ušetrených desiatky hodín mesačne',
-                      'výrazne nižšia chybovosť',
-                      'zamestnanci sa môžu sústrediť na dôležitejšie úlohy'
+                      t('solution.benefits.1'),
+                      t('solution.benefits.2'),
+                      t('solution.benefits.3')
                     ].map((item, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />

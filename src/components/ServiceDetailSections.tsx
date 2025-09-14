@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import serviceDocuments from '@/assets/service-documents.jpg';
 import servicePhotos from '@/assets/service-photos.jpg';
 import serviceAudio from '@/assets/service-audio.jpg';
 
 const ServiceDetailSections = () => {
+  const { t } = useLanguage();
   return (
     <>
       {/* Service 1 - Documents */}
@@ -12,24 +14,24 @@ const ServiceDetailSections = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Prepisovanie textov a dokumentov
+                {t('detail.documents.title')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Na prepisovanie textov využívame kombináciu AI modelov a špecializovaných OCR knižníc. Vďaka tomu vieme efektívne spracovať text aj pri horšej kvalite dokumentov alebo obrázkov. Po načítaní obsahu do databázy získate prístup k obsahu, s ktorým budete môcť ďalej pracovať, filtrovať ho a triediť.
+                {t('detail.documents.description')}
               </p>
               
               <h4 className="text-xl font-semibold text-foreground mt-6">
-                Prepisovanie textov z naskenovaných dokumentov:
+                {t('detail.documents.scanned.title')}
               </h4>
               <p className="text-muted-foreground leading-relaxed">
-                Dodáte nám naskenované dokumenty na USB alebo zabezpečenom cloude. Sken je potrebné realizovať v dostatočnom rozlíšení. Požiadavku vyriešime jednorazovo alebo vám navrhneme spôsob, ako celý tento proces automatizovať.
+                {t('detail.documents.scanned.description')}
               </p>
               
               <h4 className="text-xl font-semibold text-foreground mt-6">
-                Prepisovanie textov a dokumentov v PDF:
+                {t('detail.documents.pdf.title')}
               </h4>
               <p className="text-muted-foreground leading-relaxed">
-                V prípade PDF dokumentov je prepis spoľahlivejší, ak je obsah v PDF súbore skopírovateľný. Môže ísť o formuláre, testy, správy, faktúry, doklady, bločky, objednávky či kalkulácie.
+                {t('detail.documents.pdf.description')}
               </p>
             </div>
             
@@ -43,7 +45,7 @@ const ServiceDetailSections = () => {
                    />
                 </div>
                 <p className="text-lg md:text-xl text-muted-foreground text-center">
-                  pdf, obrazok, audio, video
+                  {t('detail.documents.imageCaption')}
                 </p>
               </div>
             </div>
@@ -64,21 +66,21 @@ const ServiceDetailSections = () => {
                      className="w-full h-96 object-contain"
                    />
                 </div>
-                <p className="text-lg md:text-xl text-muted-foreground text-center">
-                  Digitalizujeme dokumenty do novej podoby
-                </p>
+                 <p className="text-lg md:text-xl text-muted-foreground text-center">
+                   {t('detail.photos.imageCaption')}
+                 </p>
               </div>
             </div>
             
             <div className="space-y-6 order-1 md:order-2">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Prepisovanie textov z fotiek a obrázkov
+                {t('detail.photos.title')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Potrebujete prepísať z fotky texty alebo z obrázku vybrať údaje o produkte? Texty môžeme prepísať a predmety na obrázku rozpoznať a roztriediť. Dôležité je, aby bola čitateľnosť dostupná aj voľným okom.
+                {t('detail.photos.description1')}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Naša technológia dokáže rozpoznať text aj z fotografií dokumentov, tableiek, vizitkiek, štítkov na produktoch a ďalších objektov. Využívame pokročilé algoritmy na zlepšenie kvality obrazu a zvýšenie presnosti rozpoznávania textu.
+                {t('detail.photos.description2')}
               </p>
             </div>
           </div>
@@ -91,13 +93,13 @@ const ServiceDetailSections = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Prepisovanie audio a video nahrávok
+                {t('detail.audio.title')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Používame AI nástroje na rozpoznávanie reči (ASR – Automatic Speech Recognition). Nahrali ste si konzultáciu, školenie, workshop na svoj telefón, kameru alebo diktafón? Prepíšeme vám tento záznam do formy textu a roztriedime ho na základe kľúčových slov do kategórií.
+                {t('detail.audio.description1')}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Ukážeme vám, ako z rozhovoru vybrať dôležité informácie a pracovať s nimi ďalej. Naša technológia podporuje rôzne jazyky a dokáže rozpoznať viacerých rečníkov v jednej nahrávke.
+                {t('detail.audio.description2')}
               </p>
             </div>
             
@@ -110,9 +112,9 @@ const ServiceDetailSections = () => {
                      className="w-full h-96 object-contain"
                    />
                 </div>
-                <p className="text-lg md:text-xl text-muted-foreground text-center">
-                  Zvyšujeme efektivitu práce
-                </p>
+                 <p className="text-lg md:text-xl text-muted-foreground text-center">
+                   {t('detail.audio.imageCaption')}
+                 </p>
               </div>
             </div>
           </div>

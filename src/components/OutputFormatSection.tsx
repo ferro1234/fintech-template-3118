@@ -1,7 +1,9 @@
 import React from 'react';
 import { FileText, Table, File, Code, Image, Database } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const OutputFormatSection = () => {
+  const { t } = useLanguage();
   const formats = [
     { icon: FileText, label: 'Word' },
     { icon: Table, label: 'Excel' },
@@ -18,14 +20,14 @@ const OutputFormatSection = () => {
     <section id="vystupny-format" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-16">
-          Výstupný formát
+          {t('format.title')}
         </h2>
         
         <div className="space-y-12">
           {/* File formats */}
           <div className="cosmic-card rounded-2xl p-8">
             <h3 className="text-xl font-semibold text-foreground mb-6">
-              V samostatných súboroch:
+              {t('format.files.title')}
             </h3>
             
             <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6">
@@ -49,12 +51,12 @@ const OutputFormatSection = () => {
                 <Database className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold text-foreground">
-                API, XML riešenie
+                {t('format.api.title')}
               </h3>
             </div>
             
             <p className="text-muted-foreground leading-relaxed">
-              Vytvoríme vám zabezpečený export dát do vašej aplikácii. Tiež vieme zabezpečiť import dát do našej databázy pre doplnenie údajov.
+              {t('format.api.description')}
             </p>
           </div>
         </div>

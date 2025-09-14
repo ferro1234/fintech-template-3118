@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
 
 const SoftwareSolutionMobile = () => {
   const [expandedItems, setExpandedItems] = useState<number[]>([0]);
+  const { t } = useLanguage();
 
   const solutionFeatures = [
     {
       image: solutionNoMonthly,
-      title: "Riešenie vášho problému bez mesačných poplatkov",
-      description: "Vytvoríme vám internú webaplikáciu na správu vášho digitalizovaného obsahu. Môžete si tak bez ďalších poplatkov navyše realizovať automatizovaný prepis podľa vašich procesov."
+      title: t('solution.feature1.title'),
+      description: t('solution.feature1.description')
     },
     {
       image: solutionDesign,
-      title: "Nový vzhľad výstupných dát",
-      description: "Navrhneme vám nový vzhľad z prepísaných firemných dokumentov bez nutnosti grafického spracovania interným alebo externým grafikom.",
+      title: t('solution.feature2.title'),
+      description: t('solution.feature2.description'),
       features: [
-        'Generovanie vizitiek',
-        'Generovanie nálepiek, štítkov', 
-        'Generovanie výročných správ',
-        'Generovanie QR kódov',
-        'Generovanie cenových ponúk',
-        'Generovanie objednávok',
-        'Generovanie grafov a tabuliek'
+        t('solution.features.1'),
+        t('solution.features.2'),
+        t('solution.features.3'),
+        t('solution.features.4'),
+        t('solution.features.5'),
+        t('solution.features.6'),
+        t('solution.features.7')
       ]
     },
     {
       image: solutionAutomation,
-      title: "Automatizácia procesov",
-      description: "Naše riešenie zohľadní aj vaše súčasné aplikácie, s ktorými pracujete. Navrhneme aktívne prepojenie medzi súčasnými aplikáciami a procesmi.",
-      additionalText: "V prípade, ak nemáte žiadnu automatizáciu procesov vo firme, navrhneme vám riešenie na mieru."
+      title: t('solution.feature3.title'),
+      description: t('solution.feature3.description'),
+      additionalText: t('solution.feature3.additional')
     }
   ];
 
@@ -61,7 +63,7 @@ const SoftwareSolutionMobile = () => {
                 {feature.title}
               </h3>
               <div className="flex items-center justify-center gap-2 text-base text-gray-400">
-                <span className="text-blue-400 font-medium animate-pulse text-lg">{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
+                <span className="text-blue-400 font-medium animate-pulse text-lg">{isExpanded ? t('solution.mobile.showLess') : t('solution.mobile.showMore')}</span>
                 {isExpanded ? (
                   <ChevronUp className="w-5 h-5 text-blue-400" />
                 ) : (
