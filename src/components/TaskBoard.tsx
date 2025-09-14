@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import TaskColumn, { Column } from './TaskColumn';
 import { Task } from './TaskCard';
@@ -157,13 +156,13 @@ interface TaskBoardProps {
   className?: string;
 }
 
-const TaskBoard: React.FC<TaskBoardProps> = ({ className }) => {
+const TaskBoard: React.FC<TaskBoardProps> = memo(({ className }) => {
   const [columns, setColumns] = useState<Column[]>(initialColumns);
   const [draggedTask, setDraggedTask] = useState<Task | null>(null);
   const [dragSourceColumn, setDragSourceColumn] = useState<string | null>(null);
   const { toast } = useToast();
 
-  const handleTaskDragStart = (e: React.DragEvent, task: Task) => {
+  const handleTaskDragStart = useCallback((e: React.DragEvent, task: Task) => {
     e.dataTransfer.setData('taskId', task.id);
     setDraggedTask(task);
     
@@ -176,22 +175,22 @@ const TaskBoard: React.FC<TaskBoardProps> = ({ className }) => {
       setDragSourceColumn(sourceColumn.id);
       e.dataTransfer.setData('sourceColumnId', sourceColumn.id);
     }
-  };
+  }, [columns]);
 
-  const handleTaskDragEnd = () => {
+  const handleTaskDragEnd = useCallback(() => {
     setDraggedTask(null);
     setDragSourceColumn(null);
-  };
+  }, []);
 
-  const handleDragOver = (e: React.DragEvent) => {
+  const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
-  };
+  }, []);
 
-  const handleDragLeave = (e: React.DragEvent) => {
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
     // Handle drag leave logic if needed
-  };
+  }, []);
 
-  const handleDrop = (e: React.DragEvent, targetColumnId: string) => {
+  const handleDrop = useCallback((e: React.DragEvent, targetColumnId: string) => {
     e.preventDefault();
     
     const taskId = e.dataTransfer.getData('taskId');
@@ -235,11 +234,11 @@ const TaskBoard: React.FC<TaskBoardProps> = ({ className }) => {
         description: `${draggedTask.title} moved to ${targetColumn.title}`,
       });
     }
-  };
+  }, [columns, draggedTask, toast]);
 
-  const handleStatusChange = (taskId: string, newStatus: string) => {
+  const handleStatusChange = useCallback((taskId: string, newStatus: string) => {
     // This function can be used for programmatic status changes (not used in this implementation)
-  };
+  }, []);
 
   return (
     <div className={`flex gap-4 overflow-x-auto pb-4 ${className}`}>
@@ -257,6 +256,8 @@ const TaskBoard: React.FC<TaskBoardProps> = ({ className }) => {
       ))}
     </div>
   );
-};
+});
+
+TaskBoard.displayName = 'TaskBoard';
 
 export default TaskBoard;

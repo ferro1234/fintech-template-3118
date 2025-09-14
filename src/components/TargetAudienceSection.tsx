@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { User, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const TargetAudienceSection = () => {
+const TargetAudienceSection = memo(() => {
   const { t } = useLanguage();
   return (
     <section id="pre-koho" className="py-20 px-6 bg-background">
@@ -51,6 +51,8 @@ const TargetAudienceSection = () => {
       </div>
     </section>
   );
-};
+});
+
+TargetAudienceSection.displayName = 'TargetAudienceSection';
 
 export default TargetAudienceSection;

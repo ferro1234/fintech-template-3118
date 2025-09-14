@@ -1,5 +1,4 @@
-
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, memo } from 'react';
 
 export interface Task {
   id: string;
@@ -24,7 +23,7 @@ interface TaskCardProps {
   onStatusChange: (taskId: string, newStatus: string) => void;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ task, onDragStart, onDragEnd, onStatusChange }) => {
+const TaskCard: React.FC<TaskCardProps> = memo(({ task, onDragStart, onDragEnd, onStatusChange }) => {
   const [isDragging, setIsDragging] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -117,6 +116,8 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onDragStart, onDragEnd, onSta
       </div>
     </div>
   );
-};
+});
+
+TaskCard.displayName = 'TaskCard';
 
 export default TaskCard;

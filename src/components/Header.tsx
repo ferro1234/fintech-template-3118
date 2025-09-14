@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './Logo';
-const Header = () => {
+const Header = memo(() => {
   const [activeSection, setActiveSection] = useState('titulka');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['titulka', 'o-nas', 'pre-koho', 'vystupny-format', 'softverove-riesenie', 'sluzby', 'kontakt'];
-      const scrollPosition = window.scrollY + 100; // offset for sticky header
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
+  const handleScroll = useCallback(() => {
+    const sections = ['titulka', 'o-nas', 'pre-koho', 'vystupny-format', 'softverove-riesenie', 'sluzby', 'kontakt'];
+    const scrollPosition = window.scrollY + 100; // offset for sticky header
+
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(section);
+          break;
         }
       }
-    };
+    }
+  }, []);
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  const scrollToSection = (sectionId: string) => {
+  }, [handleScroll]);
+
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       const headerOffset = 80; // height of sticky header
@@ -38,7 +41,7 @@ const Header = () => {
       });
     }
     setIsMobileMenuOpen(false); // Close mobile menu when navigating
-  };
+  }, []);
   const menuItems = [{
     label: t('nav.services'),
     id: 'sluzby'
@@ -158,5 +161,6 @@ const Header = () => {
         </div>
       )}
     </header>;
-};
+});
+
 export default Header;

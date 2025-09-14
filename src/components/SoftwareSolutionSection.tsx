@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo, memo } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
@@ -11,14 +11,14 @@ import example1 from '@/assets/example-1.jpg';
 import example2 from '@/assets/example-2.jpg';
 import example3 from '@/assets/example-3.jpg';
 
-const SoftwareSolutionSection = () => {
+const SoftwareSolutionSection = memo(() => {
   const [currentExample, setCurrentExample] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const { t } = useLanguage();
   
-  const solutionFeatures = [
+  const solutionFeatures = useMemo(() => [
     {
       image: solutionNoMonthly,
       title: t('solution.feature1.title'),
@@ -44,9 +44,9 @@ const SoftwareSolutionSection = () => {
       description: t('solution.feature3.description'),
       additionalText: t('solution.feature3.additional')
     }
-  ];
+  ], [t]);
   
-  const examples = [
+  const examples = useMemo(() => [
     {
       image: example1,
       title: "Automatizácia PDF formulárov a certifikátov"
@@ -59,53 +59,53 @@ const SoftwareSolutionSection = () => {
       image: example3,
       title: "Systém na správu atestov a dokumentácie"
     }
-  ];
+  ], []);
 
-  const nextExample = () => {
+  const nextExample = useCallback(() => {
     setCurrentExample((prev) => (prev + 1) % examples.length);
-  };
+  }, [examples.length]);
 
-  const prevExample = () => {
+  const prevExample = useCallback(() => {
     setCurrentExample((prev) => (prev - 1 + examples.length) % examples.length);
-  };
+  }, [examples.length]);
+
+  const handleScroll = useCallback(() => {
+    if (!sectionRef.current || !carouselApi) return;
+
+    const rect = sectionRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const sectionHeight = rect.height;
+    
+    // Calculate how much of the section is visible
+    const visibleTop = Math.max(0, -rect.top);
+    const visibleBottom = Math.min(sectionHeight, windowHeight - rect.top);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    
+    // Only proceed if section is significantly visible
+    if (visibleHeight < windowHeight * 0.3) return;
+    
+    // Calculate scroll progress through the section (0 to 1)
+    const scrollProgress = Math.max(0, Math.min(1, (-rect.top + windowHeight * 0.5) / (sectionHeight - windowHeight * 0.5)));
+    
+    // Determine which slide should be active based on scroll progress
+    const totalSlides = solutionFeatures.length;
+    const targetSlide = Math.floor(scrollProgress * totalSlides);
+    const clampedSlide = Math.min(targetSlide, totalSlides - 1);
+    
+    if (clampedSlide !== currentSlide) {
+      setCurrentSlide(clampedSlide);
+      carouselApi.scrollTo(clampedSlide);
+    }
+  }, [carouselApi, currentSlide, solutionFeatures.length]);
 
   useEffect(() => {
     if (!carouselApi) return;
-
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionHeight = rect.height;
-      
-      // Calculate how much of the section is visible
-      const visibleTop = Math.max(0, -rect.top);
-      const visibleBottom = Math.min(sectionHeight, windowHeight - rect.top);
-      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-      
-      // Only proceed if section is significantly visible
-      if (visibleHeight < windowHeight * 0.3) return;
-      
-      // Calculate scroll progress through the section (0 to 1)
-      const scrollProgress = Math.max(0, Math.min(1, (-rect.top + windowHeight * 0.5) / (sectionHeight - windowHeight * 0.5)));
-      
-      // Determine which slide should be active based on scroll progress
-      const totalSlides = solutionFeatures.length;
-      const targetSlide = Math.floor(scrollProgress * totalSlides);
-      const clampedSlide = Math.min(targetSlide, totalSlides - 1);
-      
-      if (clampedSlide !== currentSlide) {
-        setCurrentSlide(clampedSlide);
-        carouselApi.scrollTo(clampedSlide);
-      }
-    };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [carouselApi, currentSlide, solutionFeatures.length]);
+  }, [handleScroll]);
 
   return (
     <section ref={sectionRef} id="softverove-riesenie" className="py-20 px-6 bg-background">
@@ -304,6 +304,8 @@ const SoftwareSolutionSection = () => {
       </div>
     </section>
   );
-};
+});
+
+SoftwareSolutionSection.displayName = 'SoftwareSolutionSection';
 
 export default SoftwareSolutionSection;

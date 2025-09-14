@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import TaskCard, { Task } from './TaskCard';
 
 export interface Column {
@@ -19,7 +18,7 @@ interface TaskColumnProps {
   onStatusChange: (taskId: string, newStatus: string) => void;
 }
 
-const TaskColumn: React.FC<TaskColumnProps> = ({
+const TaskColumn: React.FC<TaskColumnProps> = memo(({
   column,
   onDrop,
   onDragOver,
@@ -83,6 +82,8 @@ const TaskColumn: React.FC<TaskColumnProps> = ({
       </div>
     </div>
   );
-};
+});
+
+TaskColumn.displayName = 'TaskColumn';
 
 export default TaskColumn;

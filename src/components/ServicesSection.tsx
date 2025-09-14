@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useCallback, memo } from 'react';
 import { FileText, Camera, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import servicesPhoto from '@/assets/services-photo.jpg';
-const ServicesSection = () => {
+
+const ServicesSection = memo(() => {
   const { t } = useLanguage();
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth'
       });
     }
-  };
-  return <section id="sluzby" className="py-20 px-6 relative overflow-hidden bg-black">
+  }, []);
+
+  return (
+    <section id="sluzby" className="py-20 px-6 relative overflow-hidden bg-black">
       {/* Header Section - Text only on desktop/tablet, hidden on mobile */}
       <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
         <div className="text-center">
@@ -136,6 +139,10 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
-    </section>;
-};
+    </section>
+  );
+});
+
+ServicesSection.displayName = 'ServicesSection';
+
 export default ServicesSection;
