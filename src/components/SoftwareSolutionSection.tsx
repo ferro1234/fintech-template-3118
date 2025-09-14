@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Target, Shield, Palette, Zap } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
+import SoftwareSolutionMobile from './SoftwareSolutionMobile';
 import solutionNoMonthly from '@/assets/solution-nomonthly.jpg';
 import solutionDesign from '@/assets/solution-design.jpg';
 import solutionAutomation from '@/assets/solution-automation.jpg';
@@ -108,8 +109,8 @@ const SoftwareSolutionSection = () => {
           Softvérové riešenie na mieru
         </h2>
         
-        {/* Main features carousel */}
-        <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 mb-16 overflow-hidden">
+        {/* Desktop carousel */}
+        <div className="hidden md:block relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 mb-16 overflow-hidden">
           <Carousel 
             setApi={setCarouselApi}
             opts={{
@@ -176,6 +177,11 @@ const SoftwareSolutionSection = () => {
               ></div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile accordion */}
+        <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 mb-16">
+          <SoftwareSolutionMobile />
         </div>
 
         <div className="space-y-16">
