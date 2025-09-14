@@ -63,11 +63,11 @@ const ServicesSection = () => {
           <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
           background: 'linear-gradient(to right, #1e3a8a, #3756ad)'
         }}>
-            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center">
+            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center lg:flex-row lg:items-center lg:text-left">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg font-semibold text-white leading-tight">
+              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
                 Prepisovanie textov a dokumentov
               </h3>
             </div>
@@ -85,11 +85,11 @@ const ServicesSection = () => {
           <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
           background: 'linear-gradient(to right, #1e3a8a, #3756ad)'
         }}>
-            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center">
+            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center lg:flex-row lg:items-center lg:text-left">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg font-semibold text-white leading-tight">
+              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
                 Prepisovanie textov z fotiek a obrázkov
               </h3>
             </div>
@@ -107,11 +107,11 @@ const ServicesSection = () => {
           <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
           background: 'linear-gradient(to right, #1e3a8a, #3756ad)'
         }}>
-            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center">
+            <div className="flex items-center gap-4 mb-6 md:flex-col md:items-center md:text-center lg:flex-row lg:items-center lg:text-left">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-lg font-semibold text-white leading-tight">
+              <h3 className="text-xl md:text-lg lg:text-xl font-semibold text-white leading-tight">
                 Prepisovanie audio a video nahrávok
               </h3>
             </div>
