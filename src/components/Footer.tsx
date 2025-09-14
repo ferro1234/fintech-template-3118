@@ -53,7 +53,7 @@ const Footer = () => {
                     href="https://www.spravawebstranok.sk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors block"
+                    className="text-primary hover:text-primary/80 transition-colors block underline decoration-2 underline-offset-2 font-medium"
                   >
                     spravawebstranok.sk
                   </a>
@@ -67,7 +67,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors underline decoration-2 underline-offset-2 font-medium"
             >
               {t('footer.linkedin')}
               <ExternalLink className="w-4 h-4" />
