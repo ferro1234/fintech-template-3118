@@ -16,9 +16,22 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-start">
-          {/* Photo - Second on mobile, first column on desktop */}
-          <div className="relative order-1 lg:order-1 w-full max-w-md lg:max-w-none">
+        <div className="text-center lg:text-left space-y-6">
+          <p className="hidden md:block text-blue-300 font-medium text-lg mb-4">
+            miesto pre vašu fotografiu
+          </p>
+          <p className="hidden md:block text-blue-100 leading-relaxed text-base lg:text-lg">
+            Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
+            Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
+            s vysokou presnosťou a efektivitou.
+          </p>
+        </div>
+      </div>
+
+      {/* Photo positioned directly above services */}
+      <div className="relative z-10 max-w-6xl mx-auto mb-0">
+        <div className="flex justify-center mb-0">
+          <div className="w-full max-w-md lg:max-w-lg">
             <div className="w-full h-[400px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
               <div className="text-center">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -28,18 +41,6 @@ const ServicesSection = () => {
                 <p className="text-blue-400/70 text-xs lg:text-sm mt-2">Odporúčaná veľkosť: 400x600px</p>
               </div>
             </div>
-          </div>
-          
-          {/* Description - Third on mobile (moved after photo), second column on desktop */}
-          <div className="order-2 lg:order-2 space-y-6 text-center lg:text-left">
-            <p className="hidden md:block text-blue-300 font-medium text-lg mb-4">
-              miesto pre vašu fotografiu
-            </p>
-            <p className="hidden md:block text-blue-100 leading-relaxed text-base lg:text-lg">
-              Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
-              Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
-              s vysokou presnosťou a efektivitou.
-            </p>
           </div>
         </div>
       </div>
