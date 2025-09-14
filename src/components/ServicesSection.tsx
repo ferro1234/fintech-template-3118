@@ -62,9 +62,7 @@ const ServicesSection = () => {
 
       {/* Services Grid */}
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 p-8 rounded-3xl" style={{
-          background: 'linear-gradient(to right, #1e3a8a, #3756ad)'
-        }}>
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
           <div className="group rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
           background: 'linear-gradient(135deg, #3756ad, #4a67c4)'
