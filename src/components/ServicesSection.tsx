@@ -15,9 +15,10 @@ const ServicesSection = () => {
       {/* Header Section - Text only on desktop/tablet, hidden on mobile */}
       <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
         <div className="text-center">
-          <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            <span className="text-blue-400">PREPISOVANIE TEXTOV</span> <span className="text-white">Z DOKUMENTOV A OBRAZKOV</span>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            DIGITALIZAČNÉ &<br />
+            <span className="text-blue-400">AI SLUŽBY</span>
           </h1>
         </div>
       </div>
@@ -36,12 +37,15 @@ const ServicesSection = () => {
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div>
               
-              <h1 className="text-5xl font-bold leading-tight mb-6">
-                <span className="text-blue-400">PREPISOVANIE TEXTOV</span> <span className="text-white">Z DOKUMENTOV A OBRAZKOV</span>
+              <h1 className="text-5xl font-bold text-white leading-tight mb-6">
+                DIGITALIZAČNÉ &<br />
+                <span className="text-blue-400">AI SLUŽBY</span>
               </h1>
             </div>
-            <p className="text-blue-100 leading-relaxed text-xl">
-              Zaoberáme sa automatizáciou a digitalizáciou obsahu pre firmy alebo jednotlivcov. Prinášame riešenia automatizovaného prepisu rôznych suborov alebo obrázkov do digitalnej podoby.
+            <p className="text-blue-100 leading-relaxed text-lg">
+              Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
+              Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
+              s vysokou presnosťou a efektivitou.
             </p>
           </div>
         </div>
@@ -60,7 +64,9 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(135deg, #3756ad, #2563eb)'}}>
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+        }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <FileText strokeWidth={1.5} className="w-8 h-8 text-white" />
@@ -74,17 +80,15 @@ const ServicesSection = () => {
               Digitalizujeme naskenované dokumenty a PDF súbory pomocou pokročilých AI modelov a OCR technológií pre vysokú presnosť prepisu.
             </p>
             
-            <Button 
-              onClick={() => scrollToSection('dokumenty')} 
-              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
-              variant="outline"
-            >
+            <Button onClick={() => scrollToSection('dokumenty')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
               Zistiť viac
             </Button>
           </div>
 
           {/* Service 2 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(135deg, #3756ad, #2563eb)'}}>
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+        }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Camera strokeWidth={1.5} className="w-8 h-8 text-white" />
@@ -98,17 +102,15 @@ const ServicesSection = () => {
               Rozpoznávame a prepísame texty z fotografií dokumentov, vizitkiek, štítkov a ďalších objektov s pokročilými algoritmami na zlepšenie kvality obrazu.
             </p>
             
-            <Button 
-              onClick={() => scrollToSection('fotky')} 
-              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
-              variant="outline"
-            >
+            <Button onClick={() => scrollToSection('fotky')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
               Zistiť viac
             </Button>
           </div>
 
           {/* Service 3 */}
-          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{background: 'linear-gradient(135deg, #3756ad, #2563eb)'}}>
+          <div className="group backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-h-80" style={{
+          background: 'linear-gradient(to bottom right, #3756ad40, #3756ad40)'
+        }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="transition-transform duration-300 group-hover:scale-110">
                 <Mic strokeWidth={1.5} className="w-8 h-8 text-white" />
@@ -122,11 +124,7 @@ const ServicesSection = () => {
               Používame AI nástroje pre automatické rozpoznávanie reči. Prepíseme vaše nahrávky do textovej podoby a roztriedime podľa kľúčových slov.
             </p>
             
-            <Button 
-              onClick={() => scrollToSection('audio-video')} 
-              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25"
-              variant="outline"
-            >
+            <Button onClick={() => scrollToSection('audio-video')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
               Zistiť viac
             </Button>
           </div>
