@@ -5,7 +5,7 @@ const CriticalCSS = () => {
   return (
     <style dangerouslySetInnerHTML={{
       __html: `
-        /* Critical above-the-fold styles */
+        /* Critical above-the-fold styles with performance optimizations */
         body { 
           font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
           background-color: hsl(0 0% 8%);
@@ -13,6 +13,11 @@ const CriticalCSS = () => {
           margin: 0;
           padding: 0;
           font-display: swap;
+          /* Performance optimizations */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeSpeed;
+          contain: layout style;
         }
         
         .cosmic-gradient {
@@ -37,13 +42,25 @@ const CriticalCSS = () => {
           transform: translateZ(0);
         }
         
+        /* Animations optimized for performance - use transform instead of layout properties */
         .animate-fade-in {
           animation: fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: transform, opacity;
         }
         
         @keyframes fade-in {
-          0% { opacity: 0; transform: translateY(10px); }
-          100% { opacity: 1; transform: translateY(0); }
+          0% { opacity: 0; transform: translate3d(0, 10px, 0); }
+          100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        
+        /* Optimize scroll performance */
+        .scroll-smooth {
+          scroll-behavior: smooth;
+        }
+        
+        /* Prevent layout shifts during loading */
+        .loading-placeholder {
+          contain: layout style paint;
         }
       `
     }} />

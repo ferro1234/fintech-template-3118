@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './Logo';
+import { createOptimizedScrollHandler } from '@/utils/performanceOptimizer';
 const Header = memo(() => {
   const [activeSection, setActiveSection] = useState('titulka');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,8 +16,11 @@ const Header = memo(() => {
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
-        const offsetTop = element.offsetTop;
-        const offsetHeight = element.offsetHeight;
+        // Use cached positions to avoid forced reflows
+        const rect = element.getBoundingClientRect();
+        const offsetTop = rect.top + window.scrollY;
+        const offsetHeight = rect.height;
+        
         if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
           setActiveSection(section);
           break;
@@ -25,16 +29,22 @@ const Header = memo(() => {
     }
   }, []);
 
+  // Create optimized scroll handler
+  const optimizedScrollHandler = createOptimizedScrollHandler(handleScroll);
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+    return () => window.removeEventListener('scroll', optimizedScrollHandler);
+  }, [optimizedScrollHandler]);
 
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       const headerOffset = 80; // height of sticky header
-      const elementPosition = element.offsetTop - headerOffset;
+      // Use getBoundingClientRect instead of offsetTop to avoid forced reflow
+      const rect = element.getBoundingClientRect();
+      const elementPosition = rect.top + window.scrollY - headerOffset;
+      
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
