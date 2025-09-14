@@ -135,7 +135,6 @@ const SoftwareSolutionSection = () => {
                           src={feature.image}
                           alt={feature.title}
                           className="w-full h-64 object-cover rounded-xl shadow-2xl border border-gray-600/30"
-                          loading="lazy"
                         />
                       </div>
                       <div className="lg:w-2/3 text-center lg:text-left">
@@ -205,7 +204,6 @@ const SoftwareSolutionSection = () => {
                     src={examples[currentExample].image}
                     alt={examples[currentExample].title}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                   />
                   
                   <button 

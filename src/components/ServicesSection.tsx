@@ -34,7 +34,7 @@ const ServicesSection = () => {
           {/* Photo - Left column */}
           <div className="flex justify-center">
             <div className="w-full max-w-lg">
-              <img src={servicesPhoto} alt="Realizátor digitalizačných služieb" className="w-auto h-[500px] object-cover rounded-2xl shadow-2xl" loading="lazy" />
+              <img src={servicesPhoto} alt="Realizátor digitalizačných služieb" className="w-auto h-[500px] object-cover rounded-2xl shadow-2xl" />
             </div>
           </div>
           
@@ -61,7 +61,7 @@ const ServicesSection = () => {
       <div className="lg:hidden relative z-10 max-w-6xl mx-auto mb-0">
         <div className="flex justify-center mb-0">
           <div className="w-full max-w-md">
-            <img src={servicesPhoto} alt="Realizátor digitalizačných služieb" className="w-auto h-[400px] object-cover rounded-2xl shadow-2xl" loading="lazy" />
+            <img src={servicesPhoto} alt="Realizátor digitalizačných služieb" className="w-auto h-[400px] object-cover rounded-2xl shadow-2xl" />
           </div>
         </div>
       </div>
