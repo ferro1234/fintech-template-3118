@@ -180,7 +180,7 @@ const SoftwareSolutionSection = () => {
         </div>
 
         {/* Mobile accordion */}
-        <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 mb-16">
+        <div className="md:hidden bg-gradient-to-br from-gray-900 to-black p-4 sm:p-6 mb-16 mx-[-1.5rem] sm:mx-0 sm:rounded-3xl">
           <SoftwareSolutionMobile />
         </div>
 
