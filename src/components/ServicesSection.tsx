@@ -73,7 +73,7 @@ const ServicesSection = () => {
             </div>
             
             <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-              Digitalizujeme naskenované dokumenty a PDF súbory pomocou pokročilých AI modelov a OCR technológií pre vysokú presnosť prepisu.
+              Digitalizujeme naskenované dokumenty a PDF súbory pomocou AI alebo OCR technológií. Prepisovanie textov z naskenovaných dokumentov alebo PDF.
             </p>
             
             <Button onClick={() => scrollToSection('dokumenty')} className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group-hover:bg-white/25" variant="outline">
