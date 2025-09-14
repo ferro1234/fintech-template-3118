@@ -60,12 +60,12 @@ const SoftwareSolutionMobile = () => {
               <h3 className="text-lg font-semibold text-white leading-tight mb-3 w-full break-words text-center px-4 whitespace-pre-line max-w-[280px] mx-auto">
                 {feature.title}
               </h3>
-              <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-                <span className="text-blue-400 font-medium animate-pulse">{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
+              <div className="flex items-center justify-center gap-2 text-base text-gray-400">
+                <span className="text-blue-400 font-medium animate-pulse text-lg">{isExpanded ? 'Skryť' : 'Ukáž viac'}</span>
                 {isExpanded ? (
-                  <ChevronUp className="w-4 h-4 text-blue-400" />
+                  <ChevronUp className="w-5 h-5 text-blue-400" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-blue-400" />
+                  <ChevronDown className="w-5 h-5 text-blue-400" />
                 )}
               </div>
             </Button>
