@@ -214,6 +214,7 @@ const SoftwareSolutionSection = memo(() => {
                   
                   <button 
                     onClick={prevExample}
+                    aria-label="Previous example"
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors"
                   >
                     <ChevronLeft className="w-5 h-5 text-foreground" />
@@ -221,6 +222,7 @@ const SoftwareSolutionSection = memo(() => {
                   
                   <button 
                     onClick={nextExample}
+                    aria-label="Next example"
                     className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors"
                   >
                     <ChevronRight className="w-5 h-5 text-foreground" />
@@ -232,6 +234,7 @@ const SoftwareSolutionSection = memo(() => {
                     <button
                       key={index}
                       onClick={() => setCurrentExample(index)}
+                      aria-label={`Go to example ${index + 1}`}
                       className={`w-3 h-3 rounded-full transition-colors ${
                         index === currentExample ? 'bg-primary' : 'bg-muted'
                       }`}
