@@ -1,5 +1,5 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
 import ServiceDetailSections from '@/components/ServiceDetailSections';
@@ -7,11 +7,10 @@ import TargetAudienceSection from '@/components/TargetAudienceSection';
 import OutputFormatSection from '@/components/OutputFormatSection';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
-// Only lazy load the heaviest components
-const SoftwareSolutionSection = React.lazy(() => import('@/components/SoftwareSolutionSection'));
-const AboutSection = React.lazy(() => import('@/components/AboutSection'));
-const Footer = React.lazy(() => import('@/components/Footer'));
-
+// Direct imports used to avoid lazy-loading issues in preview
+import SoftwareSolutionSection from '@/components/SoftwareSolutionSection';
+import AboutSection from '@/components/AboutSection';
+import Footer from '@/components/Footer';
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center py-20">
     <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
@@ -29,22 +28,16 @@ const Index = () => {
         <OutputFormatSection />
         
         <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <SoftwareSolutionSection />
-          </Suspense>
+          <SoftwareSolutionSection />
         </ErrorBoundary>
         
         <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <AboutSection />
-          </Suspense>
+          <AboutSection />
         </ErrorBoundary>
       </main>
       
       <ErrorBoundary>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </ErrorBoundary>
     </div>
   );
