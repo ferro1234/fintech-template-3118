@@ -5,40 +5,67 @@ import { Button } from '@/components/ui/button';
 const ServicesSection = () => {
   return (
     <section id="sluzby" className="py-20 px-6 relative overflow-hidden bg-black">
-      {/* Header Section - Mobile: Title -> Photo -> Description */}
-      <div className="relative z-10 max-w-6xl mx-auto mb-16">
-        {/* Title - First on mobile, stays in place on desktop */}
-        <div className="text-center lg:text-left mb-8 lg:mb-0">
+      {/* Header Section - Text only on desktop/tablet, hidden on mobile */}
+      <div className="relative z-10 max-w-6xl mx-auto mb-16 lg:hidden">
+        <div className="text-center">
           <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
             DIGITALIZAČNÉ &<br />
             <span className="text-blue-400">AI SLUŽBY</span>
           </h2>
         </div>
+      </div>
 
-        <div className="text-center lg:text-left space-y-6">
-          <p className="hidden md:block text-blue-300 font-medium text-lg mb-4">
-            miesto pre vašu fotografiu
-          </p>
-          <p className="hidden md:block text-blue-100 leading-relaxed text-base lg:text-lg">
-            Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
-            Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
-            s vysokou presnosťou a efektivitou.
-          </p>
+      {/* Photo and text layout - only on desktop/tablet */}
+      <div className="hidden lg:block relative z-10 max-w-6xl mx-auto mb-0">
+        <div className="grid grid-cols-2 gap-12 items-start">
+          {/* Photo - Left column */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-lg">
+              <div className="w-full h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Camera className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <p className="text-blue-300 font-medium text-base">Miesto pre vašu fotografiu</p>
+                  <p className="text-blue-400/70 text-sm mt-2">Odporúčaná veľkosť: 400x600px</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Text - Right column */}
+          <div className="space-y-6">
+            <div>
+              <p className="text-blue-400 uppercase tracking-wide font-medium text-sm">O NÁS</p>
+              <h2 className="text-5xl font-bold text-white leading-tight mb-6">
+                DIGITALIZAČNÉ &<br />
+                <span className="text-blue-400">AI SLUŽBY</span>
+              </h2>
+            </div>
+            <p className="text-blue-300 font-medium text-lg mb-4">
+              miesto pre vašu fotografiu
+            </p>
+            <p className="text-blue-100 leading-relaxed text-lg">
+              Špecializujeme sa na moderné riešenia digitalizácie dát pomocou umelej inteligencie. 
+              Transformujeme vaše dokumenty, fotografie a audio záznamy do digitálnej podoby 
+              s vysokou presnosťou a efektivitou.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Photo positioned directly above services */}
-      <div className="relative z-10 max-w-6xl mx-auto mb-0">
+      {/* Photo positioned directly above services - Mobile only */}
+      <div className="lg:hidden relative z-10 max-w-6xl mx-auto mb-0">
         <div className="flex justify-center mb-0">
-          <div className="w-full max-w-md lg:max-w-lg">
-            <div className="w-full h-[400px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
+          <div className="w-full max-w-md">
+            <div className="w-full h-[400px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-dashed border-blue-500/30 flex items-center justify-center shadow-2xl">
               <div className="text-center">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Camera className="w-6 h-6 lg:w-8 lg:h-8 text-blue-400" />
+                <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Camera className="w-6 h-6 text-blue-400" />
                 </div>
-                <p className="text-blue-300 font-medium text-sm lg:text-base">Miesto pre vašu fotografiu</p>
-                <p className="text-blue-400/70 text-xs lg:text-sm mt-2">Odporúčaná veľkosť: 400x600px</p>
+                <p className="text-blue-300 font-medium text-sm">Miesto pre vašu fotografiu</p>
+                <p className="text-blue-400/70 text-xs mt-2">Odporúčaná veľkosť: 400x600px</p>
               </div>
             </div>
           </div>
