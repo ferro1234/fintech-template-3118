@@ -40,7 +40,7 @@ const ServiceDetailSections = () => {
               <div className="w-full max-w-lg space-y-4">
                 <div className="cosmic-glow relative rounded-3xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
                    <img 
-                     src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.png"
+                     src="/lovable-uploads/701323ab-fb0e-4e72-b4e9-996050083520.jpg"
                      alt="PDF, obrazok, audio, video"
                      loading="lazy"
                      decoding="async"
