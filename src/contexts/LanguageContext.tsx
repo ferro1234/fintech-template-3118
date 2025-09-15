@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const translations = {
+const translations = {
   sk: {
     // Header
     'nav.services': 'Naše služby',
