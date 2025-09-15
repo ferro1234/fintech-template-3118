@@ -23,7 +23,7 @@ const ServicesSection = memo(() => {
           
            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
              {t('services.title').split(' ').map((word, index) => 
-               ['PREPISOVANIE', 'DOKUMENTOV'].includes(word) ? 
+               ['PREPISOVANIE', 'DOKUMENTOV', 'TRANSCRIPTION', 'DOCUMENTS'].includes(word.toUpperCase()) ? 
                  <span key={index} className="text-blue-400">{word} </span> : 
                  word + ' '
              )}
