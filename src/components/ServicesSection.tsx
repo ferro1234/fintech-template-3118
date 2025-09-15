@@ -54,7 +54,7 @@ const ServicesSection = memo(() => {
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div>
               
-              <h1 className="text-5xl font-bold text-white leading-tight mb-6">
+               <h1 className="text-5xl font-bold text-white leading-tight mb-6">
                 {t('services.title').split(' ').map((word, index) => 
                   ['PREPISOVANIE', 'DOKUMENTOV', 'TRANSCRIPTION', 'DOCUMENTS'].includes(word) ? 
                     <span key={index} className="text-blue-400">{word} </span> : 

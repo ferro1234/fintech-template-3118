@@ -1,9 +1,16 @@
 import React from 'react';
-import { Phone, Mail, ExternalLink } from 'lucide-react';
+import { Phone, Mail, ExternalLink, ArrowUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const { t } = useLanguage();
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   return (
     <footer id="kontakt" className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-12">
@@ -12,7 +19,7 @@ const Footer = () => {
             {t('footer.title')}
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 text-center md:text-left">
             {/* Mobile: Inline layout, Desktop: Original card layout */}
             <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
               <div className="flex items-center gap-3 md:flex-col md:gap-0">
@@ -63,13 +70,21 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="pt-8">
-             <a 
-               href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               aria-label="František Harangózo LinkedIn profil"
-               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-colors underline decoration-2 underline-offset-2 font-medium"
+          <div className="pt-8 flex flex-col items-center gap-4">
+            <button 
+              onClick={scrollToTop}
+              className="flex items-center justify-center w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors"
+              aria-label="Prejsť na začiatok stránky"
+            >
+              <ArrowUp className="w-5 h-5 text-primary" />
+            </button>
+            
+            <a 
+              href="https://www.linkedin.com/in/franti%C5%A1ek-harangozo-38302861/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="František Harangózo LinkedIn profil"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-colors underline decoration-2 underline-offset-2 font-medium"
             >
               {t('footer.linkedin')}
               <ExternalLink className="w-4 h-4" />

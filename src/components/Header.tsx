@@ -73,7 +73,13 @@ const Header = memo(() => {
   }];
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Logo />
+        <button 
+          onClick={() => scrollToSection('titulka')} 
+          className="hover:opacity-80 transition-opacity"
+          aria-label="Návrat na úvod stránky"
+        >
+          <Logo />
+        </button>
         
         <nav className="hidden lg:flex items-center space-x-1">
           {menuItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-4 py-2 text-sm rounded-full transition-colors ${activeSection === item.id ? 'bg-accent text-accent-foreground' : 'text-foreground hover:bg-accent hover:text-accent-foreground'}`}>
@@ -128,7 +134,13 @@ const Header = memo(() => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border animate-slide-in-right">
           <div className="container mx-auto px-6 py-6">
             <div className="flex justify-center mb-6">
-              <Logo />
+              <button 
+                onClick={() => scrollToSection('titulka')} 
+                className="hover:opacity-80 transition-opacity"
+                aria-label="Návrat na úvod stránky"
+              >
+                <Logo />
+              </button>
             </div>
             
             <nav className="flex flex-col space-y-4">
