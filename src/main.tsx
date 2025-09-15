@@ -3,6 +3,12 @@ import App from './App.tsx'
 import './index.css'
 import reportWebVitals, { observePerformance } from './utils/reportWebVitals'
 import { preloadCriticalImages } from './utils/performanceUtils'
+import { 
+  prepareHydration, 
+  onHydrationComplete, 
+  onHydrationError,
+  preloadCriticalResources
+} from './utils/hydrationHelper'
 
 // Start performance monitoring
 observePerformance();
@@ -10,7 +16,25 @@ observePerformance();
 // Preload critical images
 preloadCriticalImages();
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Prepare for hydration
+prepareHydration();
+
+try {
+  // Create React root and render app
+  const root = createRoot(document.getElementById("root")!);
+  root.render(<App />);
+  
+  // Handle successful hydration
+  requestAnimationFrame(() => {
+    onHydrationComplete();
+    
+    // Preload additional resources after hydration
+    setTimeout(preloadCriticalResources, 100);
+  });
+} catch (error) {
+  // Handle hydration errors
+  onHydrationError(error as Error);
+}
 
 // Measure and report Web Vitals
 reportWebVitals((metric) => {
