@@ -23,10 +23,10 @@ const Footer = () => {
             {/* Mobile: Inline layout, Desktop: Original card layout */}
             <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
               <div className="flex items-center gap-3 md:flex-col md:gap-0">
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto flex-shrink-0">
                   <Phone className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
-                <div className="md:text-center md:space-y-2">
+                <div className="text-center md:space-y-2 flex-1">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.phone')}</h3>
                    <a href="tel:0905321308" aria-label="Zavolať na telefónne číslo 0905 321 308" className="text-blue-600 hover:text-blue-500 transition-colors block">
                      0905 321 308
@@ -37,10 +37,10 @@ const Footer = () => {
             
             <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
               <div className="flex items-center gap-3 md:flex-col md:gap-0">
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto flex-shrink-0">
                   <Mail className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
-                <div className="md:text-center md:space-y-2">
+                <div className="text-center md:space-y-2 flex-1">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.email')}</h3>
                    <a href="mailto:harangozo@sketch.sk" aria-label="Poslať email na harangozo@sketch.sk" className="text-blue-600 hover:text-blue-500 transition-colors block">
                      harangozo@sketch.sk
@@ -51,10 +51,10 @@ const Footer = () => {
             
             <div className="cosmic-card rounded-2xl p-4 md:p-6 md:space-y-4">
               <div className="flex items-center gap-3 md:flex-col md:gap-0">
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center md:mx-auto flex-shrink-0">
                   <ExternalLink className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                 </div>
-                <div className="md:text-center md:space-y-2">
+                <div className="text-center md:space-y-2 flex-1">
                   <h3 className="font-semibold text-foreground md:mt-4">{t('footer.website')}</h3>
                    <a 
                      href="https://www.spravawebstranok.sk" 
