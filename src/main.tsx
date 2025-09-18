@@ -5,12 +5,19 @@ import reportWebVitals, { observePerformance } from './utils/reportWebVitals'
 import { preloadCriticalImages } from './utils/performanceUtils'
 
 // Start performance monitoring
+console.log("Bootstrap: starting app");
 observePerformance();
 
 // Preload critical images
 preloadCriticalImages();
 
-createRoot(document.getElementById("root")!).render(<App />);
+const rootEl = document.getElementById("root");
+if (!rootEl) {
+  console.error("Root element #root not found");
+} else {
+  createRoot(rootEl).render(<App />);
+  console.log("Bootstrap: app rendered");
+}
 
 // Measure and report Web Vitals
 reportWebVitals((metric) => {
