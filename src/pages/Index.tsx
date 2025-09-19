@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
 import ServiceDetailSections from '@/components/ServiceDetailSections';
-import LoadingSpinner from '@/components/LoadingSpinner';
 
 // Import components normally to avoid dynamic import issues
 import TargetAudienceSection from '@/components/TargetAudienceSection';
